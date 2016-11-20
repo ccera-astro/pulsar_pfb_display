@@ -63,7 +63,7 @@ import  time
 import sys
 import os
 
-def log(vec,pref,longitude,which):
+def log(vec,pref,longitude,which,freq,bw,decln):
     ltp = time.gmtime()
     fn = pref + "-profile-%04d%02d%02d.csv" % (ltp.tm_year, ltp.tm_mon, ltp.tm_mday)
     if (which == 1):
@@ -71,6 +71,7 @@ def log(vec,pref,longitude,which):
     f = open(fn, "a")
     curs = cur_sidereal(longitude)
     f.write("%02d,%02d,%02d,%s," % (ltp.tm_hour, ltp.tm_min, ltp.tm_sec, curs))
+    f.write("%9.4f,%f,%f," % (freq/1.0e6, bw, decln))
     if which == 0:
         for val in vec:
             f.write("%.6f," % val)

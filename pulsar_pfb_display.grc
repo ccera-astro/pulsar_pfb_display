@@ -205,7 +205,7 @@ computations within the graph.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(32, 1012)</value>
+      <value>(24, 1036)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -631,7 +631,7 @@ of the required frequency</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(312, 848)</value>
+      <value>(248, 856)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -663,7 +663,7 @@ of the required frequency</value>
     </param>
     <param>
       <key>waveform</key>
-      <value>analog.GR_SQR_WAVE</value>
+      <value>analog.GR_SIN_WAVE</value>
     </param>
   </block>
   <block>
@@ -1648,7 +1648,7 @@ results aren't quite so tiny.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(576, 1008)</value>
+      <value>(528, 1024)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1784,6 +1784,57 @@ which will then be integrated on a vector
     <param>
       <key>vlen</key>
       <value>1</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_threshold_ff</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(424, 868)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>high</key>
+      <value>0.95</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_threshold_ff_0</value>
+    </param>
+    <param>
+      <key>init</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>low</key>
+      <value>0.9</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
     </param>
   </block>
   <block>
@@ -2122,7 +2173,7 @@ components like the noise, and the pulses.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(120, 936)</value>
+      <value>(16, 936)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -4998,7 +5049,7 @@ rate.</value>
   </connection>
   <connection>
     <source_block_id>analog_sig_source_x_0</source_block_id>
-    <sink_block_id>blocks_multiply_xx_0</sink_block_id>
+    <sink_block_id>blocks_threshold_ff_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -5125,6 +5176,12 @@ rate.</value>
   <connection>
     <source_block_id>blocks_streams_to_vector_0</source_block_id>
     <sink_block_id>blocks_complex_to_mag_squared_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_threshold_ff_0</source_block_id>
+    <sink_block_id>blocks_multiply_xx_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>

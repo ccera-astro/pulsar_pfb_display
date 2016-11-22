@@ -590,7 +590,7 @@ computations within the graph.</value>
     <key>analog_fastnoise_source_x</key>
     <param>
       <key>amp</key>
-      <value>0.001</value>
+      <value>0.0025</value>
     </param>
     <param>
       <key>alias</key>
@@ -610,7 +610,7 @@ computations within the graph.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(288, 1008)</value>
+      <value>(136, 1008)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -674,7 +674,7 @@ of the required frequency</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(248, 856)</value>
+      <value>(224, 856)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1593,7 +1593,7 @@ results aren't quite so tiny.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(312, 1284)</value>
+      <value>(424, 1284)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1691,7 +1691,7 @@ results aren't quite so tiny.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(528, 1024)</value>
+      <value>(632, 1016)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1700,6 +1700,57 @@ results aren't quite so tiny.</value>
     <param>
       <key>id</key>
       <value>blocks_multiply_xx_0</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>float</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>num_inputs</key>
+      <value>2</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_multiply_xx</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(336, 1024)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_multiply_xx_1</value>
     </param>
     <param>
       <key>type</key>
@@ -1857,7 +1908,7 @@ which will then be integrated on a vector
     </param>
     <param>
       <key>high</key>
-      <value>0.95</value>
+      <value>0.995</value>
     </param>
     <param>
       <key>id</key>
@@ -1869,7 +1920,7 @@ which will then be integrated on a vector
     </param>
     <param>
       <key>low</key>
-      <value>0.9</value>
+      <value>0.99</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -1983,8 +2034,7 @@ per-channel delays</value>
     </param>
     <param>
       <key>comment</key>
-      <value>Removing the DC component, since it's not
-relevant in this part of the flow.</value>
+      <value></value>
     </param>
     <param>
       <key>affinity</key>
@@ -1996,7 +2046,7 @@ relevant in this part of the flow.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(112, 1436)</value>
+      <value>(208, 1476)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -4610,7 +4660,7 @@ def cur_sidereal(longitude):
     </param>
     <param>
       <key>gui_hint</key>
-      <value>1,0,1,3</value>
+      <value>1,0,1,4</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -5006,6 +5056,57 @@ rate.</value>
     </param>
   </block>
   <block>
+    <key>single_pole_iir_filter_xx</key>
+    <param>
+      <key>alpha</key>
+      <value>0.1</value>
+    </param>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(440, 1052)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>single_pole_iir_filter_xx_3</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>float</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
     <key>parameter</key>
     <param>
       <key>alias</key>
@@ -5085,7 +5186,13 @@ rate.</value>
   </block>
   <connection>
     <source_block_id>analog_fastnoise_source_x_0</source_block_id>
-    <sink_block_id>blocks_multiply_xx_0</sink_block_id>
+    <sink_block_id>blocks_multiply_xx_1</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>analog_fastnoise_source_x_0</source_block_id>
+    <sink_block_id>blocks_multiply_xx_1</sink_block_id>
     <source_key>0</source_key>
     <sink_key>1</sink_key>
   </connection>
@@ -5206,6 +5313,12 @@ rate.</value>
   <connection>
     <source_block_id>blocks_multiply_xx_0</source_block_id>
     <sink_block_id>blocks_multiply_const_vxx_1</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_multiply_xx_1</source_block_id>
+    <sink_block_id>single_pole_iir_filter_xx_3</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -5430,5 +5543,11 @@ rate.</value>
     <sink_block_id>tp_probe</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>single_pole_iir_filter_xx_3</source_block_id>
+    <sink_block_id>blocks_multiply_xx_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>1</sink_key>
   </connection>
 </flow_graph>

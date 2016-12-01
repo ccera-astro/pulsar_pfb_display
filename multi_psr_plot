@@ -1,0 +1,35 @@
+#!/bin/bash
+if [ $# -lt 5 ]
+then
+	echo Usage: multi_psr_plot '<start> <end> <rate> <name>'
+	exit
+fi
+start=$1
+end=$2
+rate=$3
+name="$4"
+
+shift 4
+
+rm -f psr-tmp*.dat
+n=0
+for f in $*
+do
+	awk -f do_psr.awk TSTART=$start TEND=$end PSR_RATE=$rate $f >psr-tmp$$-$n.dat
+	n=`expr $n + 1`
+done
+
+awk -f avgfile.awk psr-tmp$$-*.dat >psr-tmpout.dat
+
+
+gnuplot <<@EOF@
+set grid
+set title "Pulsar Profile: $name"
+set xlabel 'Time (msec)'
+set ylabel 'Amplitude (arb.)'
+set terminal png large size 900,600
+set output 'psr-graph.png'
+plot 'psr-tmpout.dat' with lines title 'Pulse Profile Data'
+@EOF@
+echo Output in psr-graph.png
+

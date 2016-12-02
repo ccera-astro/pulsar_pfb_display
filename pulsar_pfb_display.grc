@@ -2685,7 +2685,7 @@ Filter to (prate*psize)</value>
     </param>
     <param>
       <key>cutoff_freq</key>
-      <value>(prate*psize)/2.1</value>
+      <value>(prate*psize)/2.25</value>
     </param>
     <param>
       <key>decim</key>
@@ -2733,7 +2733,7 @@ Filter to (prate*psize)</value>
     </param>
     <param>
       <key>width</key>
-      <value>drate/10</value>
+      <value>drate/15</value>
     </param>
     <param>
       <key>win</key>

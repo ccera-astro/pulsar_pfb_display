@@ -314,7 +314,7 @@ computations within the graph.</value>
     </param>
     <param>
       <key>poll_rate</key>
-      <value>0.1</value>
+      <value>0.2</value>
     </param>
   </block>
   <block>

@@ -1822,7 +1822,7 @@ which will then be integrated on a vector
     </param>
     <param>
       <key>num_items</key>
-      <value>psize</value>
+      <value>psize*sfold</value>
     </param>
     <param>
       <key>vlen</key>
@@ -2058,7 +2058,7 @@ per-channel delays</value>
     </param>
     <param>
       <key>length</key>
-      <value>64</value>
+      <value>128</value>
     </param>
     <param>
       <key>long_form</key>
@@ -4341,7 +4341,7 @@ PSR B0329+54</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(264, 712)</value>
+      <value>(352, 696)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -4447,7 +4447,7 @@ PSR B0329+54</value>
     </param>
     <param>
       <key>vlen</key>
-      <value>psize</value>
+      <value>psize*sfold</value>
     </param>
   </block>
   <block>
@@ -4864,7 +4864,7 @@ def cur_sidereal(longitude):
     </param>
     <param>
       <key>vlen</key>
-      <value>psize</value>
+      <value>psize*sfold</value>
     </param>
     <param>
       <key>x_axis_label</key>
@@ -4897,6 +4897,49 @@ def cur_sidereal(longitude):
     <param>
       <key>y_units</key>
       <value>""</value>
+    </param>
+  </block>
+  <block>
+    <key>parameter</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value>1 or 2 is typical</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(184, 712)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>sfold</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value>Sub-folding multiplier</value>
+    </param>
+    <param>
+      <key>short_id</key>
+      <value></value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>intx</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>1</value>
     </param>
   </block>
   <block>
@@ -5001,7 +5044,7 @@ rate.</value>
     </param>
     <param>
       <key>vlen</key>
-      <value>psize</value>
+      <value>psize*sfold</value>
     </param>
   </block>
   <block>

@@ -1,5 +1,6 @@
 BEGIN {FS=", *" 
        PSR_RATE=1.0
+       PRM=1.0
        }
 /./ {sidh=$4
      sidm=$5
@@ -22,7 +23,7 @@ BEGIN {FS=", *"
 		{
 		   intp[ic] += pdata[i]
 		   ic++
-		   intp[ic] += (pdata[i]+pdata[i+1])/2
+		   intp[ic] += ((pdata[i]+pdata[i+1])/2)
 		   ic++
 		   intp[ic] += pdata[i+1]
 		   ic++
@@ -32,6 +33,7 @@ BEGIN {FS=", *"
 	 }
 	}
 END {
+       PSR_RATE /= PRM
        incr = (1.0/PSR_RATE)/(numdata)
        incr *= 1000.0
        incr /= numinterp/numdata

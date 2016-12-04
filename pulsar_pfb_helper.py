@@ -63,21 +63,29 @@ import  time
 import sys
 import os
 
-def log(vec,pref,longitude,which,freq,bw,decln):
+def log(vec,pref,longitude,which,freq,bw,decln,st,en):
     ltp = time.gmtime()
     fn = pref + "-profile-%04d%02d%02d.csv" % (ltp.tm_year, ltp.tm_mon, ltp.tm_mday)
     if (which == 1):
         fn = pref+"-tp-%04d%02d%02d.csv" % (ltp.tm_year, ltp.tm_mon, ltp.tm_mday)
     f = open(fn, "a")
     curs = cur_sidereal(longitude)
-    f.write("%02d,%02d,%02d,%s," % (ltp.tm_hour, ltp.tm_min, ltp.tm_sec, curs))
-    f.write("%9.4f,%f,%f," % (freq/1.0e6, bw, decln))
+    stimes = curs.split(",")
+    sidh = float(stimes[0])
+    sidh += float(stimes[1])/60.0
+    sidh += float(stimes[2])/3600.0
     if which == 0:
-        for val in vec:
-            f.write("%.6f," % val)
+        if (sidh >= st and sidh <= en):
+            f.write("%02d,%02d,%02d,%s," % (ltp.tm_hour, ltp.tm_min, ltp.tm_sec, curs))
+            f.write("%9.4f,%f,%5.2f," % (freq/1.0e6, bw, decln))
+            for val in vec:
+                f.write("%.4f," % val)
+            f.write("\n")
     else:
+        f.write("%02d,%02d,%02d,%s," % (ltp.tm_hour, ltp.tm_min, ltp.tm_sec, curs))
+        f.write("%9.4f,%f,%5.2f," % (freq/1.0e6, bw, decln))
         f.write("%11.8f" % vec)
-    f.write("\n")
+        f.write("\n")
     f.close()
     return 0
 

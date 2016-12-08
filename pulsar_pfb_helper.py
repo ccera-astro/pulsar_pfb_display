@@ -5,7 +5,11 @@ import time
 import ephem
 import operator
 import math
+import xmlrpclib
 
+AUDIO_ON=1
+AUDIO_OFF=0
+audio_state=AUDIO_OFF
 
 def f_pad(filt,nc):
     f = list(filt)
@@ -47,8 +51,6 @@ def calculate_delays(dm,freq,bw,nchan,drate,mult):
     # Scale to detector rate
     #
     perchan = samps/float(nchan)
-    perchan /= float(bw)/float(drate)
-    
     
     delays=[]
     for d in range(0,nchan):
@@ -63,7 +65,11 @@ import  time
 import sys
 import os
 
-def log(vec,pref,longitude,which,freq,bw,decln,st,en):
+def log(vec,pref,longitude,which,freq,bw,decln,st,en,rawf):
+    global audio_state
+    global AUDIO_ON
+    global AUDIO_OFF
+    
     ltp = time.gmtime()
     fn = pref + "-profile-%04d%02d%02d.csv" % (ltp.tm_year, ltp.tm_mon, ltp.tm_mday)
     if (which == 1):
@@ -74,6 +80,26 @@ def log(vec,pref,longitude,which,freq,bw,decln,st,en):
     sidh = float(stimes[0])
     sidh += float(stimes[1])/60.0
     sidh += float(stimes[2])/3600.0
+    
+    #
+    # Deal with "uadio" WAV file of de-dispersed, but not folded, data
+    #
+    if (sidh >= st and sidh < en and audio_state == AUDIO_OFF):
+        try:
+            s = xmlrpclib.Server('http://localhost:10001')
+            s.set_soundfile (rawf)
+            audio_state = AUDIO_ON
+        except:
+            pass
+        
+    if (sidh > en and audio_state == AUDIO_ON):
+        try:
+            s = xmlrpclib.Server('http://localhost:10001')
+            s.set_soundfile("/dev/null")
+            audio_state = AUDIO_OFF
+        except:
+            pass
+
     if which == 0:
         if (sidh >= st and sidh <= en):
             f.write("%02d,%02d,%02d,%s," % (ltp.tm_hour, ltp.tm_min, ltp.tm_sec, curs))

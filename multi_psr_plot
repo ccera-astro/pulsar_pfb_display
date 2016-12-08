@@ -15,7 +15,7 @@ rm -f psr-tmp*.dat
 n=0
 for f in $*
 do
-	awk -f do_psr.awk TSTART=$start TEND=$end PSR_RATE=$rate $f >psr-tmp$$-$n.dat
+	awk -f do_psr.awk TSTART=$start TEND=$end PSR_RATE=$rate PRM=2.0 $f >psr-tmp$$-$n.dat
 	n=`expr $n + 1`
 done
 

@@ -10,7 +10,7 @@
     </param>
     <param>
       <key>window_size</key>
-      <value>1500,1700</value>
+      <value>1800,1700</value>
     </param>
     <param>
       <key>category</key>
@@ -159,7 +159,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>pulsar_pfb_helper.log(profile_prober,prefix,longitude,0,freq,srate,decln,tstart,tend)</value>
+      <value>pulsar_pfb_helper.log(profile_prober,prefix,longitude,0,freq,srate,decln,tstart,tend,rawf)</value>
     </param>
   </block>
   <block>
@@ -186,7 +186,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>pulsar_pfb_helper.log(tp_prober,prefix,longitude,1,freq,srate,decln,tstart,tend)</value>
+      <value>pulsar_pfb_helper.log(tp_prober,prefix,longitude,1,freq,srate,decln,tstart,tend,rawf)</value>
     </param>
   </block>
   <block>
@@ -342,6 +342,33 @@ computations within the graph.</value>
     <param>
       <key>value</key>
       <value>srate</value>
+    </param>
+  </block>
+  <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1672, 1364)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>soundfile</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>"/dev/null"</value>
     </param>
   </block>
   <block>
@@ -587,129 +614,6 @@ computations within the graph.</value>
     </param>
   </block>
   <block>
-    <key>analog_fastnoise_source_x</key>
-    <param>
-      <key>amp</key>
-      <value>0.0025</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(136, 1008)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>analog_fastnoise_source_x_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>noise_type</key>
-      <value>analog.GR_GAUSSIAN</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>float</value>
-    </param>
-    <param>
-      <key>seed</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>samples</key>
-      <value>8192</value>
-    </param>
-  </block>
-  <block>
-    <key>analog_sig_source_x</key>
-    <param>
-      <key>amp</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value>For implementation of a "fake" pulsar 
-of the required frequency</value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>freq</key>
-      <value>prate</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(192, 864)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>analog_sig_source_x_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>offset</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>float</value>
-    </param>
-    <param>
-      <key>samp_rate</key>
-      <value>drate</value>
-    </param>
-    <param>
-      <key>waveform</key>
-      <value>analog.GR_SIN_WAVE</value>
-    </param>
-  </block>
-  <block>
     <key>blocks_add_xx</key>
     <param>
       <key>alias</key>
@@ -754,57 +658,6 @@ of the required frequency</value>
     <param>
       <key>num_inputs</key>
       <value>nchan</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_add_xx</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(528, 1144)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_add_xx_1</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>float</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>num_inputs</key>
-      <value>2</value>
     </param>
     <param>
       <key>vlen</key>
@@ -1515,60 +1368,6 @@ of the required frequency</value>
     </param>
   </block>
   <block>
-    <key>blocks_keep_one_in_n</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value>Decimate down to 'drate' sps
-
-N.B: drate MUST BE an integer fraction of
- the input sample rate!!!</value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(1216, 260)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_keep_one_in_n_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>n</key>
-      <value>int((samp_rate/nchan)/drate)</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>float</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>nchan</value>
-    </param>
-  </block>
-  <block>
     <key>blocks_multiply_const_vxx</key>
     <param>
       <key>alias</key>
@@ -1593,7 +1392,7 @@ results aren't quite so tiny.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(424, 1284)</value>
+      <value>(448, 1340)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1632,7 +1431,7 @@ results aren't quite so tiny.</value>
     </param>
     <param>
       <key>const</key>
-      <value>float(fake)</value>
+      <value>0.01</value>
     </param>
     <param>
       <key>affinity</key>
@@ -1644,7 +1443,7 @@ results aren't quite so tiny.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(320, 1172)</value>
+      <value>(1496, 1364)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1652,7 +1451,7 @@ results aren't quite so tiny.</value>
     </param>
     <param>
       <key>id</key>
-      <value>blocks_multiply_const_vxx_1</value>
+      <value>blocks_multiply_const_vxx_2</value>
     </param>
     <param>
       <key>type</key>
@@ -1665,108 +1464,6 @@ results aren't quite so tiny.</value>
     <param>
       <key>minoutbuf</key>
       <value>0</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_multiply_xx</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(632, 1016)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_multiply_xx_0</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>float</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>num_inputs</key>
-      <value>2</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_multiply_xx</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(336, 1024)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_multiply_xx_1</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>float</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>num_inputs</key>
-      <value>2</value>
     </param>
     <param>
       <key>vlen</key>
@@ -1881,57 +1578,6 @@ which will then be integrated on a vector
     </param>
   </block>
   <block>
-    <key>blocks_threshold_ff</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(424, 892)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>high</key>
-      <value>0.995</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_threshold_ff_0</value>
-    </param>
-    <param>
-      <key>init</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>low</key>
-      <value>0.99</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
     <key>blocks_vector_to_streams</key>
     <param>
       <key>alias</key>
@@ -1981,6 +1627,53 @@ per-channel delays</value>
     <param>
       <key>vlen</key>
       <value>1</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_wavfile_sink</key>
+    <param>
+      <key>bits_per_sample</key>
+      <value>16</value>
+    </param>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>file</key>
+      <value>soundfile</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1656, 1276)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_wavfile_sink_0</value>
+    </param>
+    <param>
+      <key>nchan</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>samp_rate</key>
+      <value>int(2e3)</value>
     </param>
   </block>
   <block>
@@ -2058,7 +1751,58 @@ per-channel delays</value>
     </param>
     <param>
       <key>length</key>
-      <value>128</value>
+      <value>256</value>
+    </param>
+    <param>
+      <key>long_form</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>ff</value>
+    </param>
+  </block>
+  <block>
+    <key>dc_blocker_xx</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1464, 1436)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>dc_blocker_xx_1</value>
+    </param>
+    <param>
+      <key>length</key>
+      <value>256</value>
     </param>
     <param>
       <key>long_form</key>
@@ -2422,7 +2166,58 @@ per-channel delays</value>
     </param>
     <param>
       <key>resamp_ratio</key>
-      <value>(drate/2)/(prate*psize)</value>
+      <value>2e3/(prate*psize)</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>float</value>
+    </param>
+  </block>
+  <block>
+    <key>fractional_resampler_xx</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(256, 1224)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>fractional_resampler_xx_0_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>phase_shift</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>resamp_ratio</key>
+      <value>(samp_rate/nchan)/drate</value>
     </param>
     <param>
       <key>type</key>
@@ -2685,11 +2480,11 @@ Filter to (prate*psize)</value>
     </param>
     <param>
       <key>cutoff_freq</key>
-      <value>(prate*psize)/2.25</value>
+      <value>(prate*psize)/2.1</value>
     </param>
     <param>
       <key>decim</key>
-      <value>2</value>
+      <value>int(drate/2e3)</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -2734,6 +2529,81 @@ Filter to (prate*psize)</value>
     <param>
       <key>width</key>
       <value>drate/15</value>
+    </param>
+    <param>
+      <key>win</key>
+      <value>firdes.WIN_HAMMING</value>
+    </param>
+  </block>
+  <block>
+    <key>low_pass_filter</key>
+    <param>
+      <key>beta</key>
+      <value>6.76</value>
+    </param>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>cutoff_freq</key>
+      <value>600</value>
+    </param>
+    <param>
+      <key>decim</key>
+      <value>int(drate/2e3)</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>fir_filter_fff</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1192, 1328)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>gain</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>low_pass_filter_2</value>
+    </param>
+    <param>
+      <key>interp</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>samp_rate</key>
+      <value>drate</value>
+    </param>
+    <param>
+      <key>width</key>
+      <value>200</value>
     </param>
     <param>
       <key>win</key>
@@ -4508,7 +4378,11 @@ import time
 import ephem
 import operator
 import math
+import xmlrpclib
 
+AUDIO_ON=1
+AUDIO_OFF=0
+audio_state=AUDIO_OFF
 
 def f_pad(filt,nc):
     f = list(filt)
@@ -4550,8 +4424,6 @@ def calculate_delays(dm,freq,bw,nchan,drate,mult):
     # Scale to detector rate
     #
     perchan = samps/float(nchan)
-    perchan /= float(bw)/float(drate)
-    
     
     delays=[]
     for d in range(0,nchan):
@@ -4566,7 +4438,11 @@ import  time
 import sys
 import os
 
-def log(vec,pref,longitude,which,freq,bw,decln,st,en):
+def log(vec,pref,longitude,which,freq,bw,decln,st,en,rawf):
+    global audio_state
+    global AUDIO_ON
+    global AUDIO_OFF
+    
     ltp = time.gmtime()
     fn = pref + "-profile-%04d%02d%02d.csv" % (ltp.tm_year, ltp.tm_mon, ltp.tm_mday)
     if (which == 1):
@@ -4577,6 +4453,26 @@ def log(vec,pref,longitude,which,freq,bw,decln,st,en):
     sidh = float(stimes[0])
     sidh += float(stimes[1])/60.0
     sidh += float(stimes[2])/3600.0
+    
+    #
+    # Deal with "uadio" WAV file of de-dispersed, but not folded, data
+    #
+    if (sidh &gt;= st and sidh &lt; en and audio_state == AUDIO_OFF):
+        try:
+            s = xmlrpclib.Server('http://localhost:10001')
+            s.set_soundfile (rawf)
+            audio_state = AUDIO_ON
+        except:
+            pass
+        
+    if (sidh &gt; en and audio_state == AUDIO_ON):
+        try:
+            s = xmlrpclib.Server('http://localhost:10001')
+            s.set_soundfile("/dev/null")
+            audio_state = AUDIO_OFF
+        except:
+            pass
+
     if which == 0:
         if (sidh &gt;= st and sidh &lt;= en):
             f.write("%02d,%02d,%02d,%s," % (ltp.tm_hour, ltp.tm_min, ltp.tm_sec, curs))
@@ -4915,6 +4811,49 @@ def cur_sidereal(longitude):
     </param>
     <param>
       <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(416, 456)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>rawf</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value>Unfolded detector output</value>
+    </param>
+    <param>
+      <key>short_id</key>
+      <value></value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>string</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>"psr-out.wav"</value>
+    </param>
+  </block>
+  <block>
+    <key>parameter</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
       <value>1 or 2 is typical</value>
     </param>
     <param>
@@ -4954,7 +4893,7 @@ def cur_sidereal(longitude):
     <key>single_pole_iir_filter_xx</key>
     <param>
       <key>alpha</key>
-      <value>(1.0/(samp_rate/nchan))*(drate/2)</value>
+      <value>(1.0/(samp_rate/nchan))*1000</value>
     </param>
     <param>
       <key>alias</key>
@@ -4962,7 +4901,7 @@ def cur_sidereal(longitude):
     </param>
     <param>
       <key>comment</key>
-      <value>Filter them, vewwy wuffwy</value>
+      <value></value>
     </param>
     <param>
       <key>affinity</key>
@@ -4974,11 +4913,11 @@ def cur_sidereal(longitude):
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1176, 132)</value>
+      <value>(368, 1156)</value>
     </param>
     <param>
       <key>_rotation</key>
-      <value>0</value>
+      <value>180</value>
     </param>
     <param>
       <key>id</key>
@@ -4998,7 +4937,7 @@ def cur_sidereal(longitude):
     </param>
     <param>
       <key>vlen</key>
-      <value>nchan</value>
+      <value>1</value>
     </param>
   </block>
   <block>
@@ -5059,7 +4998,7 @@ rate.</value>
     <key>single_pole_iir_filter_xx</key>
     <param>
       <key>alpha</key>
-      <value>1.0/(drate/2)</value>
+      <value>1.0/(samp_rate/nchan)</value>
     </param>
     <param>
       <key>alias</key>
@@ -5088,57 +5027,6 @@ rate.</value>
     <param>
       <key>id</key>
       <value>single_pole_iir_filter_xx_2</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>float</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
-    <key>single_pole_iir_filter_xx</key>
-    <param>
-      <key>alpha</key>
-      <value>0.1</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(440, 1052)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>single_pole_iir_filter_xx_3</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -5263,7 +5151,7 @@ rate.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1304, 1224)</value>
+      <value>(1576, 1232)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -5321,39 +5209,56 @@ rate.</value>
       <value>3.0</value>
     </param>
   </block>
+  <block>
+    <key>xmlrpc_server</key>
+    <param>
+      <key>addr</key>
+      <value>localhost</value>
+    </param>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1576, 1140)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>xmlrpc_server_0</value>
+    </param>
+    <param>
+      <key>port</key>
+      <value>10001</value>
+    </param>
+  </block>
   <connection>
-    <source_block_id>analog_fastnoise_source_x_0</source_block_id>
-    <sink_block_id>blocks_multiply_xx_1</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>analog_fastnoise_source_x_0</source_block_id>
-    <sink_block_id>blocks_multiply_xx_1</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>1</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>analog_sig_source_x_0</source_block_id>
-    <sink_block_id>blocks_threshold_ff_0</sink_block_id>
+    <source_block_id>blocks_add_xx_0</source_block_id>
+    <sink_block_id>single_pole_iir_filter_xx_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>blocks_add_xx_0</source_block_id>
-    <sink_block_id>blocks_add_xx_1</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>1</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_add_xx_1</source_block_id>
-    <sink_block_id>blocks_multiply_const_vxx_0</sink_block_id>
+    <sink_block_id>single_pole_iir_filter_xx_2</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>blocks_complex_to_mag_squared_0</source_block_id>
-    <sink_block_id>single_pole_iir_filter_xx_0</sink_block_id>
+    <sink_block_id>blocks_vector_to_streams_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -5430,32 +5335,20 @@ rate.</value>
     <sink_key>11</sink_key>
   </connection>
   <connection>
-    <source_block_id>blocks_keep_one_in_n_0</source_block_id>
-    <sink_block_id>blocks_vector_to_streams_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
     <source_block_id>blocks_multiply_const_vxx_0</source_block_id>
     <sink_block_id>low_pass_filter_1</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>blocks_multiply_const_vxx_1</source_block_id>
-    <sink_block_id>blocks_add_xx_1</sink_block_id>
+    <source_block_id>blocks_multiply_const_vxx_0</source_block_id>
+    <sink_block_id>low_pass_filter_2</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>blocks_multiply_xx_0</source_block_id>
-    <sink_block_id>blocks_multiply_const_vxx_1</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_multiply_xx_1</source_block_id>
-    <sink_block_id>single_pole_iir_filter_xx_3</sink_block_id>
+    <source_block_id>blocks_multiply_const_vxx_2</source_block_id>
+    <sink_block_id>blocks_wavfile_sink_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -5468,12 +5361,6 @@ rate.</value>
   <connection>
     <source_block_id>blocks_streams_to_vector_0</source_block_id>
     <sink_block_id>blocks_complex_to_mag_squared_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_threshold_ff_0</source_block_id>
-    <sink_block_id>blocks_multiply_xx_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -5556,8 +5443,20 @@ rate.</value>
     <sink_key>0</sink_key>
   </connection>
   <connection>
+    <source_block_id>dc_blocker_xx_1</source_block_id>
+    <sink_block_id>blocks_multiply_const_vxx_2</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
     <source_block_id>fractional_resampler_xx_0</source_block_id>
     <sink_block_id>dc_blocker_xx_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>fractional_resampler_xx_0_0</source_block_id>
+    <sink_block_id>blocks_multiply_const_vxx_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -5574,8 +5473,8 @@ rate.</value>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>low_pass_filter_1</source_block_id>
-    <sink_block_id>single_pole_iir_filter_xx_2</sink_block_id>
+    <source_block_id>low_pass_filter_2</source_block_id>
+    <sink_block_id>dc_blocker_xx_1</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -5659,7 +5558,7 @@ rate.</value>
   </connection>
   <connection>
     <source_block_id>single_pole_iir_filter_xx_0</source_block_id>
-    <sink_block_id>blocks_keep_one_in_n_0</sink_block_id>
+    <sink_block_id>fractional_resampler_xx_0_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -5680,11 +5579,5 @@ rate.</value>
     <sink_block_id>tp_probe</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>single_pole_iir_filter_xx_3</source_block_id>
-    <sink_block_id>blocks_multiply_xx_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>1</sink_key>
   </connection>
 </flow_graph>

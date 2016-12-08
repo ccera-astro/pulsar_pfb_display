@@ -10,7 +10,7 @@
     </param>
     <param>
       <key>window_size</key>
-      <value>1800,1700</value>
+      <value>1800,2400</value>
     </param>
     <param>
       <key>category</key>
@@ -147,7 +147,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(656, 1428)</value>
+      <value>(208, 1348)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -174,7 +174,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(472, 1428)</value>
+      <value>(24, 1396)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -298,7 +298,7 @@ computations within the graph.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(992, 1432)</value>
+      <value>(624, 1384)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -356,7 +356,7 @@ computations within the graph.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1672, 1364)</value>
+      <value>(1672, 1436)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -383,7 +383,7 @@ computations within the graph.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1232, 1620)</value>
+      <value>(1576, 2140)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -422,7 +422,7 @@ computations within the graph.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(856, 1432)</value>
+      <value>(480, 1384)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -461,7 +461,7 @@ computations within the graph.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(40, 1300)</value>
+      <value>(32, 2260)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -504,7 +504,7 @@ computations within the graph.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(40, 1212)</value>
+      <value>(200, 2172)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -547,7 +547,7 @@ computations within the graph.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(32, 1572)</value>
+      <value>(208, 2260)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -590,7 +590,7 @@ computations within the graph.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(200, 1572)</value>
+      <value>(32, 2172)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -1392,7 +1392,7 @@ results aren't quite so tiny.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(448, 1340)</value>
+      <value>(424, 1260)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1443,7 +1443,7 @@ results aren't quite so tiny.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1496, 1364)</value>
+      <value>(1456, 1364)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1657,7 +1657,7 @@ per-channel delays</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1656, 1276)</value>
+      <value>(1648, 1348)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1751,7 +1751,7 @@ per-channel delays</value>
     </param>
     <param>
       <key>length</key>
-      <value>256</value>
+      <value>512</value>
     </param>
     <param>
       <key>long_form</key>
@@ -1802,7 +1802,7 @@ per-channel delays</value>
     </param>
     <param>
       <key>length</key>
-      <value>256</value>
+      <value>2560</value>
     </param>
     <param>
       <key>long_form</key>
@@ -2130,7 +2130,10 @@ per-channel delays</value>
     </param>
     <param>
       <key>comment</key>
-      <value></value>
+      <value>Resample to a precise multiple of the pulsar
+rate (prate).
+
+Samples are ready for folding</value>
     </param>
     <param>
       <key>affinity</key>
@@ -2142,7 +2145,7 @@ per-channel delays</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(960, 1280)</value>
+      <value>(520, 1888)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2181,7 +2184,11 @@ per-channel delays</value>
     </param>
     <param>
       <key>comment</key>
-      <value></value>
+      <value>Here, we resample to a stqandard rate (drate)
+that the rest of the RG uses
+
+Our input has been band-limited by the IIR filter
+in front</value>
     </param>
     <param>
       <key>affinity</key>
@@ -2193,7 +2200,7 @@ per-channel delays</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(256, 1224)</value>
+      <value>(352, 1056)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2471,8 +2478,7 @@ per-channel delays</value>
     </param>
     <param>
       <key>comment</key>
-      <value>Resamble to an intermediate rate
-Filter to (prate*psize)</value>
+      <value>Decimate to 2sps and filter appropriately</value>
     </param>
     <param>
       <key>affinity</key>
@@ -2496,7 +2502,7 @@ Filter to (prate*psize)</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(600, 1240)</value>
+      <value>(256, 1864)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2528,7 +2534,7 @@ Filter to (prate*psize)</value>
     </param>
     <param>
       <key>width</key>
-      <value>drate/15</value>
+      <value>500</value>
     </param>
     <param>
       <key>win</key>
@@ -2571,7 +2577,7 @@ Filter to (prate*psize)</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1192, 1328)</value>
+      <value>(1208, 1312)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2713,6 +2719,134 @@ sub-channel.</value>
     <param>
       <key>id</key>
       <value>note_1</value>
+    </param>
+    <param>
+      <key>note</key>
+      <value></value>
+    </param>
+  </block>
+  <block>
+    <key>note</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value>The total-power/continuum auxillary data 
+channel.</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1248, 1820)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>note_2</value>
+    </param>
+    <param>
+      <key>note</key>
+      <value></value>
+    </param>
+  </block>
+  <block>
+    <key>note</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value>Audio recording sub-graph
+
+Take the band-limited (DC-600Hz or so) detector
+output and send to a WAV file.</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1384, 1228)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>note_3</value>
+    </param>
+    <param>
+      <key>note</key>
+      <value></value>
+    </param>
+  </block>
+  <block>
+    <key>note</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value>Folded profile display/logging subgraph</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1232, 1988)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>note_4</value>
+    </param>
+    <param>
+      <key>note</key>
+      <value></value>
+    </param>
+  </block>
+  <block>
+    <key>note</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value>Resampling to pulsar-rate*psize sub-graph</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(472, 1796)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>note_5</value>
     </param>
     <param>
       <key>note</key>
@@ -4301,7 +4435,7 @@ PSR B0329+54</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1072, 1636)</value>
+      <value>(1576, 2212)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -4560,7 +4694,7 @@ def cur_sidereal(longitude):
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1200, 1460)</value>
+      <value>(1584, 1972)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -4913,7 +5047,7 @@ def cur_sidereal(longitude):
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(368, 1156)</value>
+      <value>(352, 996)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -5018,7 +5152,7 @@ rate.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1056, 1220)</value>
+      <value>(1320, 1788)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -5151,7 +5285,7 @@ rate.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1576, 1232)</value>
+      <value>(1672, 1800)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -5210,6 +5344,330 @@ rate.</value>
     </param>
   </block>
   <block>
+    <key>virtual_sink</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1376, 36)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>virtual_sink_0</value>
+    </param>
+    <param>
+      <key>stream_id</key>
+      <value>detectors</value>
+    </param>
+  </block>
+  <block>
+    <key>virtual_sink</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1008, 1204)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>virtual_sink_1</value>
+    </param>
+    <param>
+      <key>stream_id</key>
+      <value>dedispersed</value>
+    </param>
+  </block>
+  <block>
+    <key>virtual_sink</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(616, 1260)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>virtual_sink_2</value>
+    </param>
+    <param>
+      <key>stream_id</key>
+      <value>resampled_detector</value>
+    </param>
+  </block>
+  <block>
+    <key>virtual_sink</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(768, 1876)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>virtual_sink_3</value>
+    </param>
+    <param>
+      <key>stream_id</key>
+      <value>prefolded</value>
+    </param>
+  </block>
+  <block>
+    <key>virtual_sink</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(936, 1516)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>virtual_sink_4</value>
+    </param>
+    <param>
+      <key>stream_id</key>
+      <value>folded_vector</value>
+    </param>
+  </block>
+  <block>
+    <key>virtual_source</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(992, 444)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>180</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>virtual_source_0</value>
+    </param>
+    <param>
+      <key>stream_id</key>
+      <value>detectors</value>
+    </param>
+  </block>
+  <block>
+    <key>virtual_source</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1072, 1788)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>virtual_source_1</value>
+    </param>
+    <param>
+      <key>stream_id</key>
+      <value>dedispersed</value>
+    </param>
+  </block>
+  <block>
+    <key>virtual_source</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(568, 1036)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>180</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>virtual_source_2</value>
+    </param>
+    <param>
+      <key>stream_id</key>
+      <value>dedispersed</value>
+    </param>
+  </block>
+  <block>
+    <key>virtual_source</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(16, 1908)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>virtual_source_3</value>
+    </param>
+    <param>
+      <key>stream_id</key>
+      <value>resampled_detector</value>
+    </param>
+  </block>
+  <block>
+    <key>virtual_source</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(16, 1484)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>virtual_source_4</value>
+    </param>
+    <param>
+      <key>stream_id</key>
+      <value>prefolded</value>
+    </param>
+  </block>
+  <block>
+    <key>virtual_source</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(968, 1356)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>virtual_source_5</value>
+    </param>
+    <param>
+      <key>stream_id</key>
+      <value>resampled_detector</value>
+    </param>
+  </block>
+  <block>
+    <key>virtual_source</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1336, 2076)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>virtual_source_6</value>
+    </param>
+    <param>
+      <key>stream_id</key>
+      <value>folded_vector</value>
+    </param>
+  </block>
+  <block>
     <key>xmlrpc_server</key>
     <param>
       <key>addr</key>
@@ -5229,7 +5687,7 @@ rate.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1576, 1140)</value>
+      <value>(1576, 1068)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -5246,19 +5704,13 @@ rate.</value>
   </block>
   <connection>
     <source_block_id>blocks_add_xx_0</source_block_id>
-    <sink_block_id>single_pole_iir_filter_xx_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_add_xx_0</source_block_id>
-    <sink_block_id>single_pole_iir_filter_xx_2</sink_block_id>
+    <sink_block_id>virtual_sink_1</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>blocks_complex_to_mag_squared_0</source_block_id>
-    <sink_block_id>blocks_vector_to_streams_0</sink_block_id>
+    <sink_block_id>virtual_sink_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -5336,13 +5788,7 @@ rate.</value>
   </connection>
   <connection>
     <source_block_id>blocks_multiply_const_vxx_0</source_block_id>
-    <sink_block_id>low_pass_filter_1</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_multiply_const_vxx_0</source_block_id>
-    <sink_block_id>low_pass_filter_2</sink_block_id>
+    <sink_block_id>virtual_sink_2</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -5450,7 +5896,7 @@ rate.</value>
   </connection>
   <connection>
     <source_block_id>fractional_resampler_xx_0</source_block_id>
-    <sink_block_id>dc_blocker_xx_0</sink_block_id>
+    <sink_block_id>virtual_sink_3</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -5564,19 +6010,61 @@ rate.</value>
   </connection>
   <connection>
     <source_block_id>single_pole_iir_filter_xx_1</source_block_id>
-    <sink_block_id>profile_probe</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>single_pole_iir_filter_xx_1</source_block_id>
-    <sink_block_id>qtgui_vector_sink_f_0</sink_block_id>
+    <sink_block_id>virtual_sink_4</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>single_pole_iir_filter_xx_2</source_block_id>
     <sink_block_id>tp_probe</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>virtual_source_0</source_block_id>
+    <sink_block_id>blocks_vector_to_streams_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>virtual_source_1</source_block_id>
+    <sink_block_id>single_pole_iir_filter_xx_2</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>virtual_source_2</source_block_id>
+    <sink_block_id>single_pole_iir_filter_xx_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>virtual_source_3</source_block_id>
+    <sink_block_id>low_pass_filter_1</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>virtual_source_4</source_block_id>
+    <sink_block_id>dc_blocker_xx_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>virtual_source_5</source_block_id>
+    <sink_block_id>low_pass_filter_2</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>virtual_source_6</source_block_id>
+    <sink_block_id>profile_probe</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>virtual_source_6</source_block_id>
+    <sink_block_id>qtgui_vector_sink_f_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>

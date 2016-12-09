@@ -120,7 +120,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(440, 260)</value>
+      <value>(608, 84)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -147,7 +147,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(208, 1348)</value>
+      <value>(24, 1324)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -205,7 +205,7 @@ computations within the graph.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(24, 1036)</value>
+      <value>(16, 1044)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -232,7 +232,7 @@ computations within the graph.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(360, 396)</value>
+      <value>(688, 20)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -259,7 +259,7 @@ computations within the graph.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(288, 332)</value>
+      <value>(512, 20)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -271,7 +271,7 @@ computations within the graph.</value>
     </param>
     <param>
       <key>value</key>
-      <value>firdes.low_pass_2(math.sqrt(nchan),nchan,0.40,0.175,45)</value>
+      <value>firdes.low_pass_2(math.sqrt(nchan),nchan,0.40,0.15,30)</value>
     </param>
   </block>
   <block>
@@ -329,7 +329,7 @@ computations within the graph.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(384, 164)</value>
+      <value>(104, 172)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -684,7 +684,7 @@ computations within the graph.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1168, 36)</value>
+      <value>(1416, 36)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1392,7 +1392,7 @@ results aren't quite so tiny.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(424, 1260)</value>
+      <value>(376, 1260)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1546,7 +1546,7 @@ which will then be integrated on a vector
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(936, 16)</value>
+      <value>(1208, 16)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2427,7 +2427,7 @@ in front</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(416, 16)</value>
+      <value>(752, 88)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -4157,7 +4157,7 @@ output and send to a WAV file.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(192, 12)</value>
+      <value>(240, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -4297,7 +4297,7 @@ then apply delays to each detector channel</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(608, 16)</value>
+      <value>(960, 16)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -4345,7 +4345,7 @@ PSR B0329+54</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(416, 656)</value>
+      <value>(360, 712)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -5238,7 +5238,7 @@ rate.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(344, 696)</value>
+      <value>(344, 848)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -5316,7 +5316,7 @@ rate.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(352, 784)</value>
+      <value>(184, 848)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -5355,7 +5355,7 @@ rate.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1376, 36)</value>
+      <value>(1640, 36)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -5490,11 +5490,11 @@ rate.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(992, 444)</value>
+      <value>(656, 420)</value>
     </param>
     <param>
       <key>_rotation</key>
-      <value>180</value>
+      <value>0</value>
     </param>
     <param>
       <key>id</key>

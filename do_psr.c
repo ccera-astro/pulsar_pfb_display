@@ -37,7 +37,7 @@ main (int argc, char **argv)
 	duration = atol(argv[4]);
 	
 	offset *= srate;
-	duration *= prate;
+	duration *= srate;
 	
 	tpb = (1.0/prate)/(double)BINS;
 	sdt = 1.0/srate;

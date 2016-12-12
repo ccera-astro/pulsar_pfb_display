@@ -87,7 +87,15 @@ def log(vec,pref,longitude,which,freq,bw,decln,st,en,rawf):
     if (sidh >= st and sidh < en and audio_state == AUDIO_OFF):
         try:
             s = xmlrpclib.Server('http://localhost:10001')
-            s.set_soundfile (rawf)
+            sfn = rawf
+            
+            if (rawf == "@auto@"):
+                mid = (float(st)+float(en))/2.0
+                midh = int(mid)
+                midm = mid-float(midh)
+                midm *= 60.0
+                sfn  = pref+"-psr%02d%02d+%02d-%04d%02d%02d.wav" % (midh, midm, decln, ltp.tm_year, ltp.tm_mon, ltp.tm_mday)
+            s.set_soundfile (sfn)
             audio_state = AUDIO_ON
         except:
             pass

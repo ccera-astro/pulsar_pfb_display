@@ -22,7 +22,6 @@ main (int argc, char **argv)
 	double segt = 0.0;
 	long long totsamps = 0LL;
 	int i;
-	unsigned char input[2];
 	unsigned long offset;
 	unsigned long duration;
 	int opt;
@@ -114,8 +113,8 @@ main (int argc, char **argv)
 	/*
 	 * Offset/duration are given in seconds--convert to samples
 	 */
-	offset *= srate*sizeof(input);
-	duration *= srate*sizeof(input);
+	offset *= srate*sizeof(sample);
+	duration *= srate*sizeof(sample);
 	
 	/*
 	 * Calculate folding values from input parameters
@@ -145,13 +144,17 @@ main (int argc, char **argv)
 	/*
 	 * Get to desired offset  (+16 to skip WAV header)
 	 */
-	fseek (stdin, offset+16, SEEK_SET);
+	if (fseek (fp, offset+16, SEEK_SET) == -1)
+	{
+		perror ("Seek failed");
+	}
 	
 	/*
 	 * We read one 16-bit sample at a time, and process accordingly.
 	 * This is reasonably efficient, since stdio takes care of buffering
 	 *   for us.
 	 */
+
 	while (fread(&sample, sizeof(sample), 1, fp) > 0)
 	{
 		double ds;
@@ -197,6 +200,7 @@ main (int argc, char **argv)
 		 *   segment time.
 		 */
 		if (segt >= tpb)
+
 		{
 			/*
 			 * Segt becomes whatever was left over from subtracting-out tpb
@@ -217,6 +221,7 @@ main (int argc, char **argv)
 			}
 		}
 	}
+	fprintf (stderr, "Processed %d seconds of data\n", (int)(totsamps/(long long int)srate));
 	
 	/*
 	 * Dump the folded buffer

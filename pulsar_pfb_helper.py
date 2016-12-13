@@ -59,6 +59,14 @@ def calculate_delays(dm,freq,bw,nchan,drate,mult):
         z = int(z)
         delays.append(z*mult)
     
+    #
+    # invert delays
+    #
+    dl = len(delays)
+    dl -= 1
+    idelays = []
+    for i in range(0,len(delays)):
+        idelays.append(delays[(dl-i)])
     return (delays)
 
 import  time
@@ -143,4 +151,21 @@ def cur_sidereal(longitude):
     sidt = "%02d,%02d,%02d" % (hours, minutes, seconds)
     return (sidt)
 
+
+def smear_time(dm,bw,freq):
+    f_lower = freq-(bw/2.0)
+    f_upper = freq+(bw/2.0)
     
+    f_lower /= 1.0e6
+    f_upper /= 1.0e6
+    
+    f1 = 1.0/(f_lower*f_lower)
+    f2 = 1.0/(f_upper*f_upper)
+
+    #
+    # Compute smear time
+    #
+    Dt = 4.15e3 * dm * (f2-f1)
+    Dt = abs(Dt)
+    
+    return (Dt)

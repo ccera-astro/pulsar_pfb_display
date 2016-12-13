@@ -31,16 +31,16 @@ def calculate_delays(dm,freq,bw,nchan,drate,mult):
     
     f_lower /= 1.0e6
     f_upper /= 1.0e6
+    
+    f1 = 1.0/(f_lower*f_lower)
+    f2 = 1.0/(f_upper*f_upper)
 
     #
     # Compute smear time
     #
-    f_lower = 1.0/(f_lower*f_lower)
-    f_upper = 1.0/(f_upper*f_upper)
-    Dt = 4.149e6 * dm * (f_lower-f_upper)
+    Dt = 4.15e3 * dm * (f2-f1)
     Dt = abs(Dt)
-    Dt = Dt/1000.0
-    
+
     #
     # The number of samples at the input bandwidth that represent the total smear time
     #

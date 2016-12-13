@@ -105,7 +105,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>pulsar_pfb_helper.calculate_delays(dm,freq,srate,12,drate,dmult)</value>
+      <value>pulsar_pfb_helper.calculate_delays(dm,freq,srate,nchan,drate,dmult)</value>
     </param>
   </block>
   <block>
@@ -2221,7 +2221,7 @@ per-channel delays</value>
     </param>
     <param>
       <key>value</key>
-      <value>28.3</value>
+      <value>26.76</value>
     </param>
   </block>
   <block>
@@ -2468,7 +2468,7 @@ per-channel delays</value>
     </param>
     <param>
       <key>value</key>
-      <value>408e6</value>
+      <value>627e6</value>
     </param>
   </block>
   <block>
@@ -4648,16 +4648,16 @@ def calculate_delays(dm,freq,bw,nchan,drate,mult):
     
     f_lower /= 1.0e6
     f_upper /= 1.0e6
+    
+    f1 = 1.0/(f_lower*f_lower)
+    f2 = 1.0/(f_upper*f_upper)
 
     #
     # Compute smear time
     #
-    f_lower = 1.0/(f_lower*f_lower)
-    f_upper = 1.0/(f_upper*f_upper)
-    Dt = 4.149e6 * dm * (f_lower-f_upper)
+    Dt = 4.15e3 * dm * (f2-f1)
     Dt = abs(Dt)
-    Dt = Dt/1000.0
-    
+
     #
     # The number of samples at the input bandwidth that represent the total smear time
     #
@@ -5337,7 +5337,7 @@ rate.</value>
     </param>
     <param>
       <key>value</key>
-      <value>6e6</value>
+      <value>5e6</value>
     </param>
   </block>
   <block>

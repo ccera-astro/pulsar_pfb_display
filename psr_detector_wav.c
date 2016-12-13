@@ -98,7 +98,7 @@ main (int argc, char **argv)
 		 fprintf (stderr, "Warning: -s specifies an unusually-low sample rate\n");
      }
      
-     
+     fprintf (stderr, "Running with: prate %f srate %f bins %d\n", prate, srate, numbins);
      
      /*
       * Open input file
@@ -126,10 +126,14 @@ main (int argc, char **argv)
 	 */
 	tpb = (1.0/prate)/(double)numbins;
 	
+	fprintf (stderr, "Time-per-bin: %f\n", tpb);
+	
 	/*
 	 * Dt produced by sample-rate
 	 */
 	sdt = 1.0/srate;
+	
+	fprintf (stderr, "Dt: %f\n", sdt);
 
 	
 	/*
@@ -148,15 +152,10 @@ main (int argc, char **argv)
 	 * This is reasonably efficient, since stdio takes care of buffering
 	 *   for us.
 	 */
-	while (fread(&input, sizeof(input), 1, fp) > 0)
+	while (fread(&sample, sizeof(sample), 1, fp) > 0)
 	{
 		double ds;
 		
-		/*
-		 * Deal with data format (do a SWAB)
-		 */
-		sample = input[0]<<8;
-		sample += (input[1]);
 		
 		/*
 		 * Housekeeping on number of samples

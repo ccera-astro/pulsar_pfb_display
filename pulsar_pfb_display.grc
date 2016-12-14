@@ -186,7 +186,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>pulsar_pfb_helper.log(profile_prober,prefix,longitude,0,freq,srate,decln,tstart,tend,rawf)</value>
+      <value>pulsar_pfb_helper.log(profile_prober,prefix,longitude,0,freq,srate,decln,tstart,tend)</value>
     </param>
   </block>
   <block>
@@ -213,7 +213,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>pulsar_pfb_helper.log(tp_prober,prefix,longitude,1,freq,srate,decln,tstart,tend,rawf)</value>
+      <value>pulsar_pfb_helper.log(tp_prober,prefix,longitude,1,freq,srate,decln,tstart,tend)</value>
     </param>
   </block>
   <block>
@@ -352,7 +352,7 @@ computations within the graph.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(432, 1384)</value>
+      <value>(152, 1408)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -503,7 +503,7 @@ computations within the graph.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(304, 1384)</value>
+      <value>(152, 1312)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2161,7 +2161,7 @@ per-channel delays</value>
     </param>
     <param>
       <key>length</key>
-      <value>int(drate/4)</value>
+      <value>int(drate)</value>
     </param>
     <param>
       <key>long_form</key>
@@ -2212,7 +2212,7 @@ per-channel delays</value>
     </param>
     <param>
       <key>length</key>
-      <value>2560</value>
+      <value>2500</value>
     </param>
     <param>
       <key>long_form</key>
@@ -4932,7 +4932,7 @@ import  time
 import sys
 import os
 
-def log(vec,pref,longitude,which,freq,bw,decln,st,en,rawf):
+def log(vec,pref,longitude,which,freq,bw,decln,st,en):
     global audio_state
     global AUDIO_ON
     global AUDIO_OFF
@@ -4954,14 +4954,7 @@ def log(vec,pref,longitude,which,freq,bw,decln,st,en,rawf):
     if (sidh &gt;= st and sidh &lt; en and audio_state == AUDIO_OFF):
         try:
             s = xmlrpclib.Server('http://localhost:10001')
-            sfn = rawf
-            
-            if (rawf == "@auto@"):
-                mid = (float(st)+float(en))/2.0
-                midh = int(mid)
-                midm = mid-float(midh)
-                midm *= 60.0
-                sfn  = pref+"-psr%02d%02d+%02d-%04d%02d%02d.wav" % (midh, midm, decln, ltp.tm_year, ltp.tm_mon, ltp.tm_mday)
+            sfn  = pref+"-demod-%04d%02d%02d.wav" % (ltp.tm_year, ltp.tm_mon, ltp.tm_mday)
             s.set_soundfile (sfn)
             audio_state = AUDIO_ON
         except:
@@ -5320,49 +5313,6 @@ def smear_time(dm,bw,freq):
     <param>
       <key>y_units</key>
       <value>""</value>
-    </param>
-  </block>
-  <block>
-    <key>parameter</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(416, 456)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>rawf</value>
-    </param>
-    <param>
-      <key>label</key>
-      <value>Unfolded detector output</value>
-    </param>
-    <param>
-      <key>short_id</key>
-      <value></value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>string</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>"psr-out.wav"</value>
     </param>
   </block>
   <block>

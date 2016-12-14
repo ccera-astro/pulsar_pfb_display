@@ -93,6 +93,33 @@
     </param>
     <param>
       <key>_coordinate</key>
+      <value>(768, 292)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>cmap</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>[6,7,8,9,10,0,1,2,3,4,5]</value>
+    </param>
+  </block>
+  <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
       <value>(440, 548)</value>
     </param>
     <param>
@@ -217,7 +244,34 @@ computations within the graph.</value>
     </param>
     <param>
       <key>value</key>
-      <value>10</value>
+      <value>11</value>
+    </param>
+  </block>
+  <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(448, 964)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>perchan</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>(samp_rate*1.1)/nchan</value>
     </param>
   </block>
   <block>
@@ -1465,6 +1519,61 @@ computations within the graph.</value>
     </param>
   </block>
   <block>
+    <key>blocks_delay</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>delay</key>
+      <value>delays[10]</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(612, 752)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>270</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_delay_0_5_1</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>num_ports</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>float</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
     <key>blocks_keep_one_in_n</key>
     <param>
       <key>alias</key>
@@ -2404,7 +2513,7 @@ per-channel delays</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(320, 1028)</value>
+      <value>(328, 1044)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2432,7 +2541,7 @@ per-channel delays</value>
     </param>
     <param>
       <key>taps</key>
-      <value>firdes.low_pass(1.0,samp_rate/nchan,(samp_rate/nchan)/11,15e3)</value>
+      <value>firdes.low_pass(1.0,perchan,(perchan)/11,15e3)</value>
     </param>
     <param>
       <key>type</key>
@@ -2455,7 +2564,7 @@ per-channel delays</value>
     </param>
     <param>
       <key>decim</key>
-      <value>int(((samp_rate/nchan)/5)/int(drate))</value>
+      <value>int(((perchan)/5)/int(drate))</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -2491,7 +2600,7 @@ per-channel delays</value>
     </param>
     <param>
       <key>taps</key>
-      <value>firdes.low_pass(1.0,(samp_rate/nchan)/5,600,200)</value>
+      <value>firdes.low_pass(1.0,(perchan)/5,600,200)</value>
     </param>
     <param>
       <key>type</key>
@@ -4441,6 +4550,69 @@ output and send to a WAV file.</value>
     </param>
   </block>
   <block>
+    <key>pfb_arb_resampler_xxx</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(664, 192)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>pfb_arb_resampler_xxx_1</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>nfilts</key>
+      <value>32</value>
+    </param>
+    <param>
+      <key>rrate</key>
+      <value>11.0/10.0</value>
+    </param>
+    <param>
+      <key>samp_delay</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>atten</key>
+      <value>100</value>
+    </param>
+    <param>
+      <key>taps</key>
+      <value></value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>ccf</value>
+    </param>
+  </block>
+  <block>
     <key>pfb_channelizer_ccf</key>
     <param>
       <key>atten</key>
@@ -4456,7 +4628,7 @@ output and send to a WAV file.</value>
     </param>
     <param>
       <key>ch_map</key>
-      <value>range(0,nchan)</value>
+      <value>cmap</value>
     </param>
     <param>
       <key>nchans</key>
@@ -5919,7 +6091,7 @@ rate.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(704, 220)</value>
+      <value>(464, 252)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -6081,6 +6253,12 @@ rate.</value>
     <sink_key>6</sink_key>
   </connection>
   <connection>
+    <source_block_id>blocks_delay_0_5_1</source_block_id>
+    <sink_block_id>blocks_add_xx_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>10</sink_key>
+  </connection>
+  <connection>
     <source_block_id>blocks_keep_one_in_n_0</source_block_id>
     <sink_block_id>blocks_multiply_const_vxx_1</sink_block_id>
     <source_key>0</source_key>
@@ -6138,6 +6316,12 @@ rate.</value>
     <source_block_id>blocks_vector_to_streams_0</source_block_id>
     <sink_block_id>blocks_delay_0_0</sink_block_id>
     <source_key>1</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_vector_to_streams_0</source_block_id>
+    <sink_block_id>blocks_delay_0_5_1</sink_block_id>
+    <source_key>10</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
@@ -6231,6 +6415,12 @@ rate.</value>
     <sink_key>0</sink_key>
   </connection>
   <connection>
+    <source_block_id>pfb_arb_resampler_xxx_1</source_block_id>
+    <sink_block_id>pfb_channelizer_ccf_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
     <source_block_id>pfb_channelizer_ccf_0</source_block_id>
     <sink_block_id>blocks_streams_to_vector_0</sink_block_id>
     <source_key>0</source_key>
@@ -6241,6 +6431,12 @@ rate.</value>
     <sink_block_id>blocks_streams_to_vector_0</sink_block_id>
     <source_key>1</source_key>
     <sink_key>1</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>pfb_channelizer_ccf_0</source_block_id>
+    <sink_block_id>blocks_streams_to_vector_0</sink_block_id>
+    <source_key>10</source_key>
+    <sink_key>10</sink_key>
   </connection>
   <connection>
     <source_block_id>pfb_channelizer_ccf_0</source_block_id>
@@ -6358,7 +6554,7 @@ rate.</value>
   </connection>
   <connection>
     <source_block_id>virtual_source_7</source_block_id>
-    <sink_block_id>pfb_channelizer_ccf_0</sink_block_id>
+    <sink_block_id>pfb_arb_resampler_xxx_1</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>

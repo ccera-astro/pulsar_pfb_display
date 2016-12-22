@@ -73,7 +73,7 @@ import  time
 import sys
 import os
 
-def log(vec,pref,longitude,which,freq,bw,decln,st,en):
+def log(vec,pref,longitude,which,freq,bw,decln,st,en,xport):
     global audio_state
     global AUDIO_ON
     global AUDIO_OFF
@@ -92,9 +92,9 @@ def log(vec,pref,longitude,which,freq,bw,decln,st,en):
     #
     # Deal with "uadio" WAV file of de-dispersed, but not folded, data
     #
-    if (sidh >= st and sidh < en and audio_state == AUDIO_OFF):
+    if (sidh >= st and sidh <= en and audio_state == AUDIO_OFF):
         try:
-            s = xmlrpclib.Server('http://localhost:10001')
+            s = xmlrpclib.Server('http://localhost:%d' % xport)
             sfn  = pref+"-demod-%04d%02d%02d.wav" % (ltp.tm_year, ltp.tm_mon, ltp.tm_mday)
             s.set_soundfile (sfn)
             audio_state = AUDIO_ON
@@ -103,7 +103,7 @@ def log(vec,pref,longitude,which,freq,bw,decln,st,en):
         
     if (sidh > en and audio_state == AUDIO_ON):
         try:
-            s = xmlrpclib.Server('http://localhost:10001')
+            s = xmlrpclib.Server('http://localhost:%d' % xport)
             s.set_soundfile("/dev/null")
             audio_state = AUDIO_OFF
         except:

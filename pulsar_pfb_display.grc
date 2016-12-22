@@ -105,7 +105,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>[6,7,8,9,10,0,1,2,3,4,5]</value>
+      <value>[4,5,6,0,1,2,3]</value>
     </param>
   </block>
   <block>
@@ -133,6 +133,76 @@
     <param>
       <key>value</key>
       <value>pulsar_pfb_helper.calculate_delays(dm,freq,srate,nchan,drate,dmult)</value>
+    </param>
+  </block>
+  <block>
+    <key>variable_function_probe</key>
+    <param>
+      <key>block_id</key>
+      <value>folder_rate</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>function_args</key>
+      <value></value>
+    </param>
+    <param>
+      <key>function_name</key>
+      <value>rate</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(736, 2144)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>fsrate</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>poll_rate</key>
+      <value>3</value>
+    </param>
+  </block>
+  <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(16, 1204)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>if_rate</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>500e3</value>
     </param>
   </block>
   <block>
@@ -186,7 +256,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>pulsar_pfb_helper.log(profile_prober,prefix,longitude,0,freq,srate,decln,tstart,tend)</value>
+      <value>pulsar_pfb_helper.log(profile_prober,prefix,longitude,0,freq,srate,decln,tstart,tend,xmlport)</value>
     </param>
   </block>
   <block>
@@ -213,7 +283,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>pulsar_pfb_helper.log(tp_prober,prefix,longitude,1,freq,srate,decln,tstart,tend)</value>
+      <value>pulsar_pfb_helper.log(tp_prober,prefix,longitude,1,freq,srate,decln,tstart,tend,xmlport)</value>
     </param>
   </block>
   <block>
@@ -244,34 +314,7 @@ computations within the graph.</value>
     </param>
     <param>
       <key>value</key>
-      <value>11</value>
-    </param>
-  </block>
-  <block>
-    <key>variable</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(368, 980)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>perchan</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>500e3</value>
+      <value>7</value>
     </param>
   </block>
   <block>
@@ -718,7 +761,7 @@ computations within the graph.</value>
     </param>
     <param>
       <key>gui_hint</key>
-      <value>0,4,1,1</value>
+      <value>1,0,1,1</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -735,6 +778,178 @@ computations within the graph.</value>
     <param>
       <key>type</key>
       <value>string</value>
+    </param>
+  </block>
+  <block>
+    <key>variable_qtgui_label</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>wavsrate</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>formatter</key>
+      <value>None</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(560, 2252)</value>
+    </param>
+    <param>
+      <key>gui_hint</key>
+      <value>1,1,1,1</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>variable_qtgui_label_0_0_0_1_0</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value>WAV rate</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>real</value>
+    </param>
+  </block>
+  <block>
+    <key>variable_qtgui_label</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>fsrate/psize</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>formatter</key>
+      <value>None</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(736, 2252)</value>
+    </param>
+    <param>
+      <key>gui_hint</key>
+      <value>1,2,1,1</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>variable_qtgui_label_0_0_0_1_0_0</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value>Folder Rate</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>real</value>
+    </param>
+  </block>
+  <block>
+    <key>variable_qtgui_label</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>pulsar_pfb_helper.cur_sidereal(longitude+(0*wavsrate)).replace(",",":")</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>formatter</key>
+      <value>None</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(912, 2252)</value>
+    </param>
+    <param>
+      <key>gui_hint</key>
+      <value>1,3,1,1</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>variable_qtgui_label_0_0_0_1_0_0_0</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value>LMST</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>string</value>
+    </param>
+  </block>
+  <block>
+    <key>variable_function_probe</key>
+    <param>
+      <key>block_id</key>
+      <value>wav_rate</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>function_args</key>
+      <value></value>
+    </param>
+    <param>
+      <key>function_name</key>
+      <value>rate</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(592, 2144)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>wavsrate</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>poll_rate</key>
+      <value>3</value>
     </param>
   </block>
   <block>
@@ -1314,171 +1529,6 @@ computations within the graph.</value>
     </param>
     <param>
       <key>delay</key>
-      <value>delays[9]</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(660, 760)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>270</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_delay_0_5</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>num_ports</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>float</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_delay</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>delay</key>
-      <value>delays[8]</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(708, 784)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>270</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_delay_0_5_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>num_ports</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>float</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_delay</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>delay</key>
-      <value>delays[7]</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(756, 792)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>270</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_delay_0_5_0_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>num_ports</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>float</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_delay</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>delay</key>
       <value>delays[6]</value>
     </param>
     <param>
@@ -1496,61 +1546,6 @@ computations within the graph.</value>
     <param>
       <key>id</key>
       <value>blocks_delay_0_5_0_0_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>num_ports</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>float</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_delay</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>delay</key>
-      <value>delays[10]</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(612, 752)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>270</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_delay_0_5_1</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -2067,7 +2062,7 @@ per-channel delays</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1648, 1348)</value>
+      <value>(1640, 1508)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2083,7 +2078,7 @@ per-channel delays</value>
     </param>
     <param>
       <key>samp_rate</key>
-      <value>int(2.5e3)</value>
+      <value>2500</value>
     </param>
   </block>
   <block>
@@ -2161,7 +2156,7 @@ per-channel delays</value>
     </param>
     <param>
       <key>length</key>
-      <value>int(drate)</value>
+      <value>int(drate/2)</value>
     </param>
     <param>
       <key>long_form</key>
@@ -2541,7 +2536,7 @@ per-channel delays</value>
     </param>
     <param>
       <key>taps</key>
-      <value>firdes.low_pass(1.0,perchan,(perchan)/11,15e3)</value>
+      <value>firdes.low_pass(1.0,if_rate,(if_rate)/11,15e3)</value>
     </param>
     <param>
       <key>type</key>
@@ -2564,7 +2559,7 @@ per-channel delays</value>
     </param>
     <param>
       <key>decim</key>
-      <value>int(((perchan)/5)/int(drate))</value>
+      <value>int(((if_rate)/5)/int(drate))</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -2572,7 +2567,7 @@ per-channel delays</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(320, 1140)</value>
+      <value>(344, 1164)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2600,11 +2595,66 @@ per-channel delays</value>
     </param>
     <param>
       <key>taps</key>
-      <value>firdes.low_pass(1.0,(perchan)/5,600,200)</value>
+      <value>firdes.low_pass(1.0,(if_rate)/5,600,200)</value>
     </param>
     <param>
       <key>type</key>
       <value>fff</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_probe_rate</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(352, 1724)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>folder_rate</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>float</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>mintime</key>
+      <value>1500</value>
+    </param>
+    <param>
+      <key>alpha</key>
+      <value>0.15</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
     </param>
   </block>
   <block>
@@ -2835,7 +2885,7 @@ per-channel delays</value>
     </param>
     <param>
       <key>width</key>
-      <value>25</value>
+      <value>30</value>
     </param>
     <param>
       <key>win</key>
@@ -4593,7 +4643,7 @@ output and send to a WAV file.</value>
     </param>
     <param>
       <key>rrate</key>
-      <value>500e3/(samp_rate/nchan)</value>
+      <value>if_rate/(samp_rate/nchan)</value>
     </param>
     <param>
       <key>samp_delay</key>
@@ -4932,7 +4982,7 @@ import  time
 import sys
 import os
 
-def log(vec,pref,longitude,which,freq,bw,decln,st,en):
+def log(vec,pref,longitude,which,freq,bw,decln,st,en,xport):
     global audio_state
     global AUDIO_ON
     global AUDIO_OFF
@@ -4951,9 +5001,9 @@ def log(vec,pref,longitude,which,freq,bw,decln,st,en):
     #
     # Deal with "uadio" WAV file of de-dispersed, but not folded, data
     #
-    if (sidh &gt;= st and sidh &lt; en and audio_state == AUDIO_OFF):
+    if (sidh &gt;= st and sidh &lt;= en and audio_state == AUDIO_OFF):
         try:
-            s = xmlrpclib.Server('http://localhost:10001')
+            s = xmlrpclib.Server('http://localhost:%d' % xport)
             sfn  = pref+"-demod-%04d%02d%02d.wav" % (ltp.tm_year, ltp.tm_mon, ltp.tm_mday)
             s.set_soundfile (sfn)
             audio_state = AUDIO_ON
@@ -4962,7 +5012,7 @@ def log(vec,pref,longitude,which,freq,bw,decln,st,en):
         
     if (sidh &gt; en and audio_state == AUDIO_ON):
         try:
-            s = xmlrpclib.Server('http://localhost:10001')
+            s = xmlrpclib.Server('http://localhost:%d' % xport)
             s.set_soundfile("/dev/null")
             audio_state = AUDIO_OFF
         except:
@@ -5076,7 +5126,7 @@ def smear_time(dm,bw,freq):
     </param>
     <param>
       <key>gui_hint</key>
-      <value>1,0,1,5</value>
+      <value>2,0,1,4</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -5382,7 +5432,7 @@ def smear_time(dm,bw,freq):
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(952, 1492)</value>
+      <value>(952, 1484)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -6084,6 +6134,104 @@ rate.</value>
     </param>
   </block>
   <block>
+    <key>blocks_probe_rate</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1568, 1124)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>wav_rate</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>float</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>mintime</key>
+      <value>1000</value>
+    </param>
+    <param>
+      <key>alpha</key>
+      <value>0.1</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
+    <key>parameter</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(96, 1024)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>xmlport</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value>XML RPC Port number</value>
+    </param>
+    <param>
+      <key>short_id</key>
+      <value></value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>intx</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>10009</value>
+    </param>
+  </block>
+  <block>
     <key>xmlrpc_server</key>
     <param>
       <key>addr</key>
@@ -6103,7 +6251,7 @@ rate.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1576, 1068)</value>
+      <value>(1160, 1004)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -6115,7 +6263,7 @@ rate.</value>
     </param>
     <param>
       <key>port</key>
-      <value>10001</value>
+      <value>xmlport</value>
     </param>
   </block>
   <connection>
@@ -6179,34 +6327,10 @@ rate.</value>
     <sink_key>5</sink_key>
   </connection>
   <connection>
-    <source_block_id>blocks_delay_0_5</source_block_id>
-    <sink_block_id>blocks_add_xx_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>9</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_delay_0_5_0</source_block_id>
-    <sink_block_id>blocks_add_xx_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>8</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_delay_0_5_0_0</source_block_id>
-    <sink_block_id>blocks_add_xx_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>7</sink_key>
-  </connection>
-  <connection>
     <source_block_id>blocks_delay_0_5_0_0_0</source_block_id>
     <sink_block_id>blocks_add_xx_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>6</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_delay_0_5_1</source_block_id>
-    <sink_block_id>blocks_add_xx_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>10</sink_key>
   </connection>
   <connection>
     <source_block_id>blocks_keep_one_in_n_0</source_block_id>
@@ -6235,6 +6359,12 @@ rate.</value>
   <connection>
     <source_block_id>blocks_multiply_const_vxx_2</source_block_id>
     <sink_block_id>blocks_wavfile_sink_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_multiply_const_vxx_2</source_block_id>
+    <sink_block_id>wav_rate</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -6270,12 +6400,6 @@ rate.</value>
   </connection>
   <connection>
     <source_block_id>blocks_vector_to_streams_0</source_block_id>
-    <sink_block_id>blocks_delay_0_5_1</sink_block_id>
-    <source_key>10</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_vector_to_streams_0</source_block_id>
     <sink_block_id>blocks_delay_0_1</sink_block_id>
     <source_key>2</source_key>
     <sink_key>0</sink_key>
@@ -6305,26 +6429,14 @@ rate.</value>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>blocks_vector_to_streams_0</source_block_id>
-    <sink_block_id>blocks_delay_0_5_0_0</sink_block_id>
-    <source_key>7</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_vector_to_streams_0</source_block_id>
-    <sink_block_id>blocks_delay_0_5_0</sink_block_id>
-    <source_key>8</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_vector_to_streams_0</source_block_id>
-    <sink_block_id>blocks_delay_0_5</sink_block_id>
-    <source_key>9</source_key>
+    <source_block_id>dc_blocker_xx_0</source_block_id>
+    <sink_block_id>blocks_stream_to_vector_0</sink_block_id>
+    <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>dc_blocker_xx_0</source_block_id>
-    <sink_block_id>blocks_stream_to_vector_0</sink_block_id>
+    <sink_block_id>folder_rate</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -6385,12 +6497,6 @@ rate.</value>
   <connection>
     <source_block_id>pfb_channelizer_ccf_0</source_block_id>
     <sink_block_id>blocks_streams_to_vector_0</sink_block_id>
-    <source_key>10</source_key>
-    <sink_key>10</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>pfb_channelizer_ccf_0</source_block_id>
-    <sink_block_id>blocks_streams_to_vector_0</sink_block_id>
     <source_key>2</source_key>
     <sink_key>2</sink_key>
   </connection>
@@ -6417,24 +6523,6 @@ rate.</value>
     <sink_block_id>blocks_streams_to_vector_0</sink_block_id>
     <source_key>6</source_key>
     <sink_key>6</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>pfb_channelizer_ccf_0</source_block_id>
-    <sink_block_id>blocks_streams_to_vector_0</sink_block_id>
-    <source_key>7</source_key>
-    <sink_key>7</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>pfb_channelizer_ccf_0</source_block_id>
-    <sink_block_id>blocks_streams_to_vector_0</sink_block_id>
-    <source_key>8</source_key>
-    <sink_key>8</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>pfb_channelizer_ccf_0</source_block_id>
-    <sink_block_id>blocks_streams_to_vector_0</sink_block_id>
-    <source_key>9</source_key>
-    <sink_key>9</sink_key>
   </connection>
   <connection>
     <source_block_id>single_pole_iir_filter_xx_0</source_block_id>

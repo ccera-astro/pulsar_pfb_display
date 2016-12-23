@@ -180,13 +180,32 @@ main (int argc, char **argv)
 		
 		/*
 		 * Add into accumulator buffer
+		 * 
+		 * We are "free and easy" for the first couple of minutes, and then we've established a baseline
 		 */
-		thebuffer[indx] += ds;
-		
+		if (totsamps < (srate * 180))
+		{
+		    thebuffer[indx] += ds;
+		}
 		/*
-		 * Bump number of samples in this position
+		 * Once a baseline is established, we clip based on this baseline
 		 */
-		bincnts[indx] += 1;
+		else
+		{
+			double aval;
+			
+			aval = thebuffer[indx]/bincnts[indx];
+			aval = fabs(aval);
+			
+			if (fabs(ds) < (aval * 15.0))
+			{
+				thebuffer[indx] += ds;
+				/*
+				 * Bump number of samples in this position
+				 */
+				bincnts[indx] += 1;
+			}
+		}
 		
 		/*
 		 * Bump up our "segment" timer by the time-per-sample
@@ -228,7 +247,7 @@ main (int argc, char **argv)
 	 */
 	for (i = 0; i < numbins; i++)
 	{
-		fprintf (stdout, "%f %f\n", (double)i*tpb, thebuffer[i]/bincnts[i]);
+		fprintf (stdout, "%f %12.9f\n", (double)i*tpb, thebuffer[i]/bincnts[i]);
 	}
 	exit (0);
 }

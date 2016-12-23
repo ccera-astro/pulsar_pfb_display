@@ -40,17 +40,13 @@ def calculate_delays(dm,freq,bw,nchan,drate,mult):
     #
     Dt = 4.15e3 * dm * (f2-f1)
     Dt = abs(Dt)
+    Dt = Dt / nchan
 
     #
     # The number of samples at the input bandwidth that represent the total smear time
     #
-    samps = float(bw)*Dt
+    perchan = float(bw/nchan)*Dt
     
-    #
-    # Compute that in per-channel
-    # Scale to detector rate
-    #
-    perchan = samps/float(nchan)
     
     delays=[]
     for d in range(0,nchan):

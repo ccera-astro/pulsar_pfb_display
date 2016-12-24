@@ -17,6 +17,7 @@ main (int argc, char **argv)
 	double sdt = 0.0;
 	double tpb = 0.0;
 	double srate = 0.0;
+	double thresh;
 	short sample;
 	int indx = 0;
 	double segt = 0.0;
@@ -24,9 +25,14 @@ main (int argc, char **argv)
 	int i;
 	unsigned long offset;
 	unsigned long duration;
+	double add;
 	int opt;
 	char *fn;
 	FILE *fp;
+	double aval = -5e9;
+	double alpha = 0.05;
+	double beta =  1.0-alpha;
+		
 	
 	if (argc < 2)
 	{
@@ -42,11 +48,17 @@ main (int argc, char **argv)
 	offset = 0L;
 	duration = 3600L;
 	numbins = 250;
+	add = 0.0;
+	thresh = 5.0;
 	
-	while ((opt = getopt(argc, argv, "p:n:d:s:o:")) != -1)
+	while ((opt = getopt(argc, argv, "p:n:d:s:o:a:t:")) != -1)
 	{
 		switch(opt)
 		{
+		case 'a':
+			add = atof(optarg);
+			break;
+			
 		case 'p':
 		    prate = atof(optarg);
 		    break;
@@ -67,6 +79,10 @@ main (int argc, char **argv)
 		case 'o':
 		    offset = atol(optarg);
 			break;
+		case 't':
+			thresh = atof(optarg);
+			break;
+			
 	    default:
 	        fprintf (stderr, "Unknown option: '%c'\n", opt);
 	        exit (1);
@@ -159,7 +175,6 @@ main (int argc, char **argv)
 	{
 		double ds;
 		
-		
 		/*
 		 * Housekeeping on number of samples
 		 */
@@ -177,33 +192,40 @@ main (int argc, char **argv)
 		 * Scale sample into something "reasonable" for a double
 		 */
 		ds = (double)sample / (double)16384.5;
+		ds += add;
 		
 		/*
 		 * Add into accumulator buffer
 		 * 
 		 * We are "free and easy" for the first couple of minutes, and then we've established a baseline
 		 */
-		if (totsamps < (srate * 180))
+		if (totsamps < (srate * 600))
 		{
 		    thebuffer[indx] += ds;
+		    bincnts[indx] += 1;
+		    if (aval < -1e9)
+		    {
+				aval = ds;
+				fprintf (stderr, "Initializing aval\n");
+			}
+			aval = (alpha*ds) + (beta*aval);
 		}
 		/*
 		 * Once a baseline is established, we clip based on this baseline
 		 */
 		else
 		{
-			double aval;
-			
-			aval = thebuffer[indx]/bincnts[indx];
-			aval = fabs(aval);
-			
-			if (fabs(ds) < (aval * 15.0))
+			/*
+			 * If the deviation from the local-average isn't too large, add this sample
+			 */
+			if (fabs(ds) < (fabs(aval) * thresh))
 			{
 				thebuffer[indx] += ds;
 				/*
 				 * Bump number of samples in this position
 				 */
 				bincnts[indx] += 1;
+				aval = (alpha*ds) + (beta*aval);
 			}
 		}
 		

@@ -1887,7 +1887,7 @@ results aren't quite so tiny.</value>
     </param>
     <param>
       <key>const</key>
-      <value>dmult</value>
+      <value>dcgain</value>
     </param>
     <param>
       <key>affinity</key>

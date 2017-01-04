@@ -110,12 +110,12 @@ def log(vec,pref,longitude,which,freq,bw,decln,st,en,xport):
             f.write("%02d,%02d,%02d,%s," % (ltp.tm_hour, ltp.tm_min, ltp.tm_sec, curs))
             f.write("%9.4f,%f,%5.2f," % (freq/1.0e6, bw, decln))
             for val in vec:
-                f.write("%.4f," % val)
+                f.write("%.10f," % val)
             f.write("\n")
     else:
         f.write("%02d,%02d,%02d,%s," % (ltp.tm_hour, ltp.tm_min, ltp.tm_sec, curs))
         f.write("%9.4f,%f,%5.2f," % (freq/1.0e6, bw, decln))
-        f.write("%11.8f" % vec)
+        f.write("%.10f" % vec)
         f.write("\n")
     f.close()
     return 0

@@ -22,6 +22,7 @@ main (int argc, char **argv)
 	int indx = 0;
 	double segt = 0.0;
 	long long totsamps = 0LL;
+	long long skipped = 0LL;
 	int i;
 	unsigned long offset;
 	unsigned long duration;
@@ -213,7 +214,7 @@ main (int argc, char **argv)
 		/*
 		 * Once a baseline is established, we clip based on this baseline
 		 */
-		else
+		else if (thresh > 0.0)
 		{
 			/*
 			 * If the deviation from the local-average isn't too large, add this sample
@@ -227,6 +228,15 @@ main (int argc, char **argv)
 				bincnts[indx] += 1;
 				aval = (alpha*ds) + (beta*aval);
 			}
+			else
+			{
+				skipped++;
+			}
+		}
+		else
+		{
+			thebuffer[indx] += ds;
+		    bincnts[indx] += 1;
 		}
 		
 		/*
@@ -263,6 +273,7 @@ main (int argc, char **argv)
 		}
 	}
 	fprintf (stderr, "Processed %d seconds of data\n", (int)(totsamps/(long long int)srate));
+	fprintf (stderr, "Skipped %d seconds of data\n", (int)(skipped/(long long int)srate));
 	
 	/*
 	 * Dump the folded buffer

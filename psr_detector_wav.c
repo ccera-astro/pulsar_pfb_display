@@ -19,6 +19,7 @@ main (int argc, char **argv)
 	double srate = 0.0;
 	double thresh;
 	short sample;
+	double minv = 0.0;
 	int indx = 0;
 	double segt = 0.0;
 	long long totsamps = 0LL;
@@ -33,6 +34,7 @@ main (int argc, char **argv)
 	double aval = -5e9;
 	double alpha = 0.05;
 	double beta =  1.0-alpha;
+	int avcnt = 0;
 		
 	
 	if (argc < 2)
@@ -208,14 +210,24 @@ main (int argc, char **argv)
 		    {
 				aval = ds;
 				fprintf (stderr, "Initializing aval\n");
+				avcnt++;
 			}
-			aval = (alpha*ds) + (beta*aval);
+			else
+			{
+				aval += ds;
+				avcnt++;
+			}
 		}
 		/*
 		 * Once a baseline is established, we clip based on this baseline
 		 */
 		else if (thresh > 0.0)
 		{
+			if (avcnt > 0)
+			{
+				aval /= (double) avcnt;
+				avcnt = -1;
+			}
 			/*
 			 * If the deviation from the local-average isn't too large, add this sample
 			 */
@@ -278,9 +290,17 @@ main (int argc, char **argv)
 	/*
 	 * Dump the folded buffer
 	 */
+	minv = 9e9;
 	for (i = 0; i < numbins; i++)
 	{
-		fprintf (stdout, "%f %12.9f\n", (double)i*tpb, thebuffer[i]/bincnts[i]);
+		if ((thebuffer[i]/bincnts[i]) < minv)
+		{
+			minv = thebuffer[i]/bincnts[i];
+		}
+	}
+	for (i = 0; i < numbins; i++)
+	{
+		fprintf (stdout, "%f %12.9f\n", (double)i*tpb, 10.0*log10(thebuffer[i]/bincnts[i]));
 	}
 	exit (0);
 }

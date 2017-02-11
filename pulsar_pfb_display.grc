@@ -3052,6 +3052,65 @@ per-channel delays</value>
     </param>
   </block>
   <block>
+    <key>fft_filter_xxx</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>decim</key>
+      <value>4</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(504, 260)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>fft_filter_xxx_1_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>nthreads</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>samp_delay</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>taps</key>
+      <value>firdes.low_pass(1.0,samp_rate,samp_rate/8,samp_rate/20)</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>ccc</value>
+    </param>
+  </block>
+  <block>
     <key>blocks_probe_rate</key>
     <param>
       <key>alias</key>
@@ -3382,33 +3441,6 @@ per-channel delays</value>
     <param>
       <key>win</key>
       <value>firdes.WIN_HAMMING</value>
-    </param>
-  </block>
-  <block>
-    <key>virtual_sink</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(1464, 172)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>mid</value>
-    </param>
-    <param>
-      <key>stream_id</key>
-      <value>midband_baseband</value>
     </param>
   </block>
   <block>
@@ -6486,6 +6518,33 @@ rate.</value>
     </param>
   </block>
   <block>
+    <key>virtual_sink</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(640, 356)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>virtual_sink_6</value>
+    </param>
+    <param>
+      <key>stream_id</key>
+      <value>narrow_baseband</value>
+    </param>
+  </block>
+  <block>
     <key>virtual_source</key>
     <param>
       <key>comment</key>
@@ -6551,7 +6610,7 @@ rate.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(808, 1732)</value>
+      <value>(848, 1772)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -6563,7 +6622,7 @@ rate.</value>
     </param>
     <param>
       <key>stream_id</key>
-      <value>midband_baseband</value>
+      <value>narrow_baseband</value>
     </param>
   </block>
   <block>
@@ -7144,6 +7203,12 @@ rate.</value>
     <sink_key>0</sink_key>
   </connection>
   <connection>
+    <source_block_id>fft_filter_xxx_1_0</source_block_id>
+    <sink_block_id>virtual_sink_6</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
     <source_block_id>low_pass_filter_1</source_block_id>
     <sink_block_id>pfb_arb_resampler_xxx_0</sink_block_id>
     <source_key>0</source_key>
@@ -7152,6 +7217,12 @@ rate.</value>
   <connection>
     <source_block_id>osmosdr_source_0</source_block_id>
     <sink_block_id>fft_filter_xxx_1</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>osmosdr_source_0</source_block_id>
+    <sink_block_id>fft_filter_xxx_1_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -7190,12 +7261,6 @@ rate.</value>
     <sink_block_id>blocks_streams_to_vector_0</sink_block_id>
     <source_key>3</source_key>
     <sink_key>3</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>pfb_channelizer_ccf_0</source_block_id>
-    <sink_block_id>mid</sink_block_id>
-    <source_key>3</source_key>
-    <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>pfb_channelizer_ccf_0</source_block_id>

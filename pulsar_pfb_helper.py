@@ -11,6 +11,11 @@ AUDIO_ON=1
 AUDIO_OFF=0
 audio_state=AUDIO_OFF
 
+BASEBAND_ON=1
+BASEBAND_OFF=0
+baseband_state=BASEBAND_OFF
+
+
 def f_pad(filt,nc):
     f = list(filt)
     
@@ -73,6 +78,9 @@ def log(vec,pref,longitude,which,freq,bw,decln,st,en,xport):
     global audio_state
     global AUDIO_ON
     global AUDIO_OFF
+    global baseband_state
+    global BASEBAND_ON
+    global BASEBAND_OFF
     
     ltp = time.gmtime()
     fn = pref + "-profile-%04d%02d%02d.csv" % (ltp.tm_year, ltp.tm_mon, ltp.tm_mday)
@@ -85,9 +93,27 @@ def log(vec,pref,longitude,which,freq,bw,decln,st,en,xport):
     sidh += float(stimes[1])/60.0
     sidh += float(stimes[2])/3600.0
     
+    logwindow = en - st
+    logmid = st + (logwindow/2.0)
+    
     #
-    # Deal with "uadio" WAV file of de-dispersed, but not folded, data
+    # 5 minutes for baseband data
     #
+    bbst = logmid - (2.5 / 60.0)
+    bben = logmid + (2.5 / 60.0)
+    
+    #
+    # Deal with "audio" WAV file of de-dispersed, but not folded, data
+    #
+    if (sidh >= bbst and sidh <= bben and baseband_state == BASEBAND_OFF):
+        try:
+            s = xmlrpclib.Server('http://localhost:%d' % xport)
+            bbfn = pref+"-baseband-%04d%02d%02d.bin" % (ltp.tm_year, ltp.tm_mon, ltp.tm_mday)
+            s.set_baseband_file(bbfn)
+            baseband_state = BASEBAND_ON
+        except:
+            pass
+        
     if (sidh >= st and sidh <= en and audio_state == AUDIO_OFF):
         try:
             s = xmlrpclib.Server('http://localhost:%d' % xport)
@@ -102,6 +128,14 @@ def log(vec,pref,longitude,which,freq,bw,decln,st,en,xport):
             s = xmlrpclib.Server('http://localhost:%d' % xport)
             s.set_soundfile("/dev/null")
             audio_state = AUDIO_OFF
+        except:
+            pass
+            
+    if (sidh > bben and baseband_state == BASEBAND_ON):
+        try:
+            s = xmlrpclib.Server('http://localhost:%d' % xport)
+            s.set_baseband_file("/dev/null")
+            baseband_state = BASEBAND_OFF
         except:
             pass
 

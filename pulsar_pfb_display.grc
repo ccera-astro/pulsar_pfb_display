@@ -3103,7 +3103,7 @@ per-channel delays</value>
     </param>
     <param>
       <key>taps</key>
-      <value>firdes.low_pass(1.0,samp_rate,samp_rate/8,samp_rate/20)</value>
+      <value>firdes.low_pass(1.0,samp_rate,samp_rate/8.2,samp_rate/20)</value>
     </param>
     <param>
       <key>type</key>
@@ -5554,8 +5554,13 @@ def log(vec,pref,longitude,which,freq,bw,decln,st,en,xport):
     sidh += float(stimes[2])/3600.0
     
     logwindow = en - st
-    bbst = st + (logwindow * 0.45)
-    bben = en - (logwindow * 0.45)
+    logmid = st + (logwindow/2.0)
+    
+    #
+    # 5 minutes for baseband data
+    #
+    bbst = logmid - (2.5 / 60.0)
+    bben = logmid + (2.5 / 60.0)
     
     #
     # Deal with "audio" WAV file of de-dispersed, but not folded, data

@@ -1807,7 +1807,7 @@ computations within the graph.</value>
     </param>
     <param>
       <key>scale</key>
-      <value>128</value>
+      <value>1024</value>
     </param>
     <param>
       <key>vlen</key>
@@ -1854,7 +1854,7 @@ computations within the graph.</value>
     </param>
     <param>
       <key>scale</key>
-      <value>128</value>
+      <value>1024</value>
     </param>
     <param>
       <key>vlen</key>
@@ -3660,7 +3660,7 @@ output and send to a WAV file.</value>
     </param>
     <param>
       <key>bb_gain0</key>
-      <value>5 if "airspy" in devid else 10</value>
+      <value>10</value>
     </param>
     <param>
       <key>bw0</key>

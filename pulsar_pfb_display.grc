@@ -1807,7 +1807,7 @@ computations within the graph.</value>
     </param>
     <param>
       <key>scale</key>
-      <value>1024</value>
+      <value>8192</value>
     </param>
     <param>
       <key>vlen</key>
@@ -1854,7 +1854,7 @@ computations within the graph.</value>
     </param>
     <param>
       <key>scale</key>
-      <value>1024</value>
+      <value>8192</value>
     </param>
     <param>
       <key>vlen</key>
@@ -3067,7 +3067,7 @@ per-channel delays</value>
     </param>
     <param>
       <key>decim</key>
-      <value>4</value>
+      <value>3</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -3103,7 +3103,7 @@ per-channel delays</value>
     </param>
     <param>
       <key>taps</key>
-      <value>firdes.low_pass(1.0,samp_rate,samp_rate/8.2,samp_rate/20)</value>
+      <value>firdes.low_pass(1.0,samp_rate,samp_rate/6.2,samp_rate/12)</value>
     </param>
     <param>
       <key>type</key>

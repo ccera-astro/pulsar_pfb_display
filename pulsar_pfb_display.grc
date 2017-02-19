@@ -147,33 +147,6 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(768, 292)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>cmap</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>[4,5,6,0,1,2,3]</value>
-    </param>
-  </block>
-  <block>
-    <key>variable</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
       <value>(440, 548)</value>
     </param>
     <param>
@@ -368,7 +341,34 @@ computations within the graph.</value>
     </param>
     <param>
       <key>value</key>
-      <value>7</value>
+      <value>11</value>
+    </param>
+  </block>
+  <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(440, 484)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>ndelay</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>len(delays)</value>
     </param>
   </block>
   <block>
@@ -1214,7 +1214,7 @@ computations within the graph.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1416, 36)</value>
+      <value>(1416, 20)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1634,7 +1634,7 @@ computations within the graph.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(812, 800)</value>
+      <value>(828, 872)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1643,6 +1643,226 @@ computations within the graph.</value>
     <param>
       <key>id</key>
       <value>blocks_delay_0_5_0_0_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>num_ports</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>float</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_delay</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>delay</key>
+      <value>delays[7]</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(764, 824)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>270</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_delay_0_5_0_0_0_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>num_ports</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>float</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_delay</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>delay</key>
+      <value>delays[8]</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(716, 784)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>270</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_delay_0_5_0_0_0_0_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>num_ports</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>float</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_delay</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>delay</key>
+      <value>delays[9]</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(660, 744)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>270</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_delay_0_5_0_0_0_0_0_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>num_ports</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>float</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_delay</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>delay</key>
+      <value>delays[10]</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(604, 704)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>270</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_delay_0_5_0_0_0_0_0_0_0</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -2063,6 +2283,57 @@ computations within the graph.</value>
     <param>
       <key>type</key>
       <value>float</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>nchan</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_multiply_const_vxx</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value>We can zero-out any of the PFB channels, for RFI</value>
+    </param>
+    <param>
+      <key>const</key>
+      <value>pulsar_pfb_helper.compute_rfi_map(rfilist,freq,samp_rate,nchan)</value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1432, 124)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_multiply_const_vxx_0</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>float</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
     </param>
     <param>
       <key>vlen</key>
@@ -3181,7 +3452,7 @@ per-channel delays</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(520, 848)</value>
+      <value>(352, 936)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -3341,7 +3612,7 @@ per-channel delays</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(24, 124)</value>
+      <value>(8, 132)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -5260,7 +5531,7 @@ output and send to a WAV file.</value>
     </param>
     <param>
       <key>ch_map</key>
-      <value>cmap</value>
+      <value>pulsar_pfb_helper.compute_cmap(nchan)</value>
     </param>
     <param>
       <key>nchans</key>
@@ -5507,38 +5778,29 @@ BASEBAND_ON=1
 BASEBAND_OFF=0
 baseband_state=BASEBAND_OFF
 
+def compute_cmap (nchan):
+    cmap=[]
+    start = int(nchan)/2
+    start += 1
+    for i in range(0,nchan):
+        cmap.append(start)
+        start = start+1
+        if (start &gt;= nchan):
+            start = 0
+    return cmap
+        
 
-def compute_notches (flist, fc, bw):
-    NFFT=128
-    fft_filt = [complex(1.0,0.0)]*NFFT
-    if flist == "":
-        return [complex(1.0,0.0)]
-        
-        
-    incr = bw/float(NFFT)
-    startf=fc-bw/2.0
-    
+def compute_rfi_map (flist, fc, bw, nchan):
+    rmap=[1.0]*nchan
+    incr = bw/nchan
+    startf = fc-(bw/2.0)
     flist=flist.split(",")
-    for i in range(0,len(fft_filt)):
-        for nf in flist:
-            frq = float(nf)
-            if abs(startf-frq) &lt;= incr:
-                fft_filt[i-2] = complex(0.5,0.0)
-                fft_filt[i-1] = complex(0.2,0.0)
-                fft_filt[i] = complex(0.0,0.0)
-                fft_filt[i+1] = complex(0.2,0.0)
-                fft_filt[i+2] = complex(0.5,0.0)
-        startf += incr
+    for i in range(0,nchan):
+        for f in flist:
+            if abs(startf-float(f)) &lt;= incr:
+                rmap[i] = 0.0
     
-    newf = [complex(1.0,0.0)]*NFFT
-    for i in range(NFFT/2,NFFT):
-        newf[i] = fft_filt[i-NFFT/2]
-    
-    for i in range(0,NFFT/2):
-        newf[i] = fft_filt[i+NFFT/2]
-    
-    cf = numpy.fft.ifft(newf)
-    return (cf)
+    return (rmap)
 
     
 def f_pad(filt,nc):
@@ -5729,7 +5991,7 @@ def smear_time(dm,bw,freq):
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(440, 620)</value>
+      <value>(336, 644)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -5788,7 +6050,7 @@ def smear_time(dm,bw,freq):
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1008, 356)</value>
+      <value>(1576, 412)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -6350,7 +6612,7 @@ def smear_time(dm,bw,freq):
     </param>
     <param>
       <key>value</key>
-      <value>611.0e6</value>
+      <value>9e9</value>
     </param>
   </block>
   <block>
@@ -6779,7 +7041,7 @@ rate.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1640, 36)</value>
+      <value>(1448, 252)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -6914,7 +7176,7 @@ rate.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(976, 292)</value>
+      <value>(752, 84)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -6968,7 +7230,7 @@ rate.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(656, 420)</value>
+      <value>(688, 420)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -7211,7 +7473,7 @@ rate.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(744, 1396)</value>
+      <value>(536, 1396)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -7412,7 +7674,7 @@ rate.</value>
   </connection>
   <connection>
     <source_block_id>blocks_complex_to_mag_squared_0</source_block_id>
-    <sink_block_id>virtual_sink_0</sink_block_id>
+    <sink_block_id>blocks_multiply_const_vxx_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -7465,6 +7727,30 @@ rate.</value>
     <sink_key>6</sink_key>
   </connection>
   <connection>
+    <source_block_id>blocks_delay_0_5_0_0_0_0</source_block_id>
+    <sink_block_id>blocks_add_xx_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>7</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_delay_0_5_0_0_0_0_0</source_block_id>
+    <sink_block_id>blocks_add_xx_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>8</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_delay_0_5_0_0_0_0_0_0</source_block_id>
+    <sink_block_id>blocks_add_xx_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>9</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_delay_0_5_0_0_0_0_0_0_0</source_block_id>
+    <sink_block_id>blocks_add_xx_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>10</sink_key>
+  </connection>
+  <connection>
     <source_block_id>blocks_float_to_char_0</source_block_id>
     <sink_block_id>blocks_interleave_0</sink_block_id>
     <source_key>0</source_key>
@@ -7497,6 +7783,12 @@ rate.</value>
   <connection>
     <source_block_id>blocks_keep_one_in_n_2</source_block_id>
     <sink_block_id>blocks_file_sink_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_multiply_const_vxx_0</source_block_id>
+    <sink_block_id>virtual_sink_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -7556,6 +7848,12 @@ rate.</value>
   </connection>
   <connection>
     <source_block_id>blocks_vector_to_streams_0</source_block_id>
+    <sink_block_id>blocks_delay_0_5_0_0_0_0_0_0_0</sink_block_id>
+    <source_key>10</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_vector_to_streams_0</source_block_id>
     <sink_block_id>blocks_delay_0_1</sink_block_id>
     <source_key>2</source_key>
     <sink_key>0</sink_key>
@@ -7582,6 +7880,24 @@ rate.</value>
     <source_block_id>blocks_vector_to_streams_0</source_block_id>
     <sink_block_id>blocks_delay_0_5_0_0_0</sink_block_id>
     <source_key>6</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_vector_to_streams_0</source_block_id>
+    <sink_block_id>blocks_delay_0_5_0_0_0_0</sink_block_id>
+    <source_key>7</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_vector_to_streams_0</source_block_id>
+    <sink_block_id>blocks_delay_0_5_0_0_0_0_0</sink_block_id>
+    <source_key>8</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_vector_to_streams_0</source_block_id>
+    <sink_block_id>blocks_delay_0_5_0_0_0_0_0_0</sink_block_id>
+    <source_key>9</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
@@ -7671,6 +7987,12 @@ rate.</value>
   <connection>
     <source_block_id>pfb_channelizer_ccf_0</source_block_id>
     <sink_block_id>blocks_streams_to_vector_0</sink_block_id>
+    <source_key>10</source_key>
+    <sink_key>10</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>pfb_channelizer_ccf_0</source_block_id>
+    <sink_block_id>blocks_streams_to_vector_0</sink_block_id>
     <source_key>2</source_key>
     <sink_key>2</sink_key>
   </connection>
@@ -7697,6 +8019,24 @@ rate.</value>
     <sink_block_id>blocks_streams_to_vector_0</sink_block_id>
     <source_key>6</source_key>
     <sink_key>6</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>pfb_channelizer_ccf_0</source_block_id>
+    <sink_block_id>blocks_streams_to_vector_0</sink_block_id>
+    <source_key>7</source_key>
+    <sink_key>7</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>pfb_channelizer_ccf_0</source_block_id>
+    <sink_block_id>blocks_streams_to_vector_0</sink_block_id>
+    <source_key>8</source_key>
+    <sink_key>8</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>pfb_channelizer_ccf_0</source_block_id>
+    <sink_block_id>blocks_streams_to_vector_0</sink_block_id>
+    <source_key>9</source_key>
+    <sink_key>9</sink_key>
   </connection>
   <connection>
     <source_block_id>single_pole_iir_filter_xx_0</source_block_id>

@@ -16,38 +16,29 @@ BASEBAND_ON=1
 BASEBAND_OFF=0
 baseband_state=BASEBAND_OFF
 
+def compute_cmap (nchan):
+    cmap=[]
+    start = int(nchan)/2
+    start += 1
+    for i in range(0,nchan):
+        cmap.append(start)
+        start = start+1
+        if (start >= nchan):
+            start = 0
+    return cmap
+        
 
-def compute_notches (flist, fc, bw):
-    NFFT=128
-    fft_filt = [complex(1.0,0.0)]*NFFT
-    if flist == "":
-        return [complex(1.0,0.0)]
-        
-        
-    incr = bw/float(NFFT)
-    startf=fc-bw/2.0
-    
+def compute_rfi_map (flist, fc, bw, nchan):
+    rmap=[1.0]*nchan
+    incr = bw/nchan
+    startf = fc-(bw/2.0)
     flist=flist.split(",")
-    for i in range(0,len(fft_filt)):
-        for nf in flist:
-            frq = float(nf)
-            if abs(startf-frq) <= incr:
-                fft_filt[i-2] = complex(0.5,0.0)
-                fft_filt[i-1] = complex(0.2,0.0)
-                fft_filt[i] = complex(0.0,0.0)
-                fft_filt[i+1] = complex(0.2,0.0)
-                fft_filt[i+2] = complex(0.5,0.0)
-        startf += incr
+    for i in range(0,nchan):
+        for f in flist:
+            if abs(startf-float(f)) <= incr:
+                rmap[i] = 0.0
     
-    newf = [complex(1.0,0.0)]*NFFT
-    for i in range(NFFT/2,NFFT):
-        newf[i] = fft_filt[i-NFFT/2]
-    
-    for i in range(0,NFFT/2):
-        newf[i] = fft_filt[i+NFFT/2]
-    
-    cf = numpy.fft.ifft(newf)
-    return (cf)
+    return (rmap)
 
     
 def f_pad(filt,nc):

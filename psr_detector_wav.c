@@ -11,6 +11,7 @@ int
 main (int argc, char **argv)
 {
 	double thebuffer[DEFAULT_BINS*5];
+	double theotherbuffer[DEFAULT_BINS*5];
 	int bincnts[DEFAULT_BINS*5];
 	int numbins = DEFAULT_BINS;
 	double prate =0.0;
@@ -20,6 +21,7 @@ main (int argc, char **argv)
 	double thresh;
 	short sample;
 	double minv = 0.0;
+	double maxv = 0.0;
 	int indx = 0;
 	double segt = 0.0;
 	long long totsamps = 0LL;
@@ -35,6 +37,8 @@ main (int argc, char **argv)
 	double alpha = 0.05;
 	double beta =  1.0-alpha;
 	int avcnt = 0;
+	double lp = 0.0;
+	int logmode = 0;
 		
 	
 	if (argc < 2)
@@ -54,7 +58,7 @@ main (int argc, char **argv)
 	add = 0.0;
 	thresh = 5.0;
 	
-	while ((opt = getopt(argc, argv, "p:n:d:s:o:a:t:")) != -1)
+	while ((opt = getopt(argc, argv, "p:n:d:s:o:a:t:l")) != -1)
 	{
 		switch(opt)
 		{
@@ -84,6 +88,9 @@ main (int argc, char **argv)
 			break;
 		case 't':
 			thresh = atof(optarg);
+			break;
+	    case 'l':
+			logmode = 1;
 			break;
 			
 	    default:
@@ -195,8 +202,16 @@ main (int argc, char **argv)
 		 * Scale sample into something "reasonable" for a double
 		 */
 		ds = (double)sample / (double)16384.5;
-		ds += add;
 		
+		{
+			/*
+			 * Implement high-pass filter
+			 */
+			alpha = 1.0 / (srate*30.0);
+			lp = (alpha * ds) + ((1.0-alpha) *lp);
+			ds -= lp;
+			ds += add;
+		}
 		/*
 		 * Add into accumulator buffer
 		 * 
@@ -287,20 +302,52 @@ main (int argc, char **argv)
 	fprintf (stderr, "Processed %d seconds of data\n", (int)(totsamps/(long long int)srate));
 	fprintf (stderr, "Skipped %d seconds of data\n", (int)(skipped/(long long int)srate));
 	
-	/*
-	 * Dump the folded buffer
-	 */
-	minv = 9e9;
-	for (i = 0; i < numbins; i++)
 	{
-		if ((thebuffer[i]/bincnts[i]) < minv)
+		int maxloc = 0;
+		int start = 0;
+		
+		/*
+		 * Dump the folded buffer
+		 */
+		minv = 9e9;
+		maxv = 1e-9;
+		for (i = 0; i < numbins; i++)
 		{
-			minv = thebuffer[i]/bincnts[i];
+			if ((thebuffer[i]/bincnts[i]) < minv)
+			{
+				minv = thebuffer[i]/bincnts[i];
+			}
+			if ((thebuffer[i]/bincnts[i]) > maxv)
+			{
+				maxv = (thebuffer[i]/bincnts[i]);
+				maxloc = i;
+			}
+		}
+		start = numbins/2;
+		for (i = 0; i < numbins; i++)
+		{
+		    theotherbuffer[start] = thebuffer[maxloc];
+		    start++;
+		    maxloc++;
+		    if (start >= numbins)
+		    {
+				start = 0;
+			}
+			if (maxloc >= numbins)
+			{
+				maxloc = 0;
+			}
 		}
 	}
+	
 	for (i = 0; i < numbins; i++)
 	{
-		fprintf (stdout, "%f %12.9f\n", (double)i*tpb, 10.0*log10(thebuffer[i]/bincnts[i]));
+		double lg;
+		double linear;
+		
+		linear = theotherbuffer[i]/bincnts[i];
+		lg = 10.0*log10(theotherbuffer[i]/bincnts[i]);
+		fprintf (stdout, "%f %12.9f\n", (double)i*tpb, logmode ? lg : linear);
 	}
 	exit (0);
 }

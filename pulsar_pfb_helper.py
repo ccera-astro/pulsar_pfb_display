@@ -54,7 +54,7 @@ def f_pad(filt,nc):
     return([0.0]*low+f+[0.0]*high)
 
 
-def calculate_delays(dm,freq,bw,nchan,drate,mult):
+def calculate_delays(dm,freq,bw,nchan,mult):
 
     f_lower = freq-(bw/2.0)
     f_upper = freq+(bw/2.0)

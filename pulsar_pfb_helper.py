@@ -217,3 +217,96 @@ def smear_time(dm,bw,freq):
     Dt = abs(Dt)
     
     return (Dt)
+
+#
+# Compute a de-dispersion filter
+#  From Hankins, et al, 1975
+#
+# This code translated from dedisp_filter.c from Swinburne
+#   pulsar software repository
+#
+def compute_dispfilter(dm,doppler,bw,centerfreq):
+    npts = compute_disp_ntaps(dm,bw,centerfreq)
+    tmp = numpy.zeros(npts, dtype=numpy.complex)
+    M_PI = 3.14159265358
+    DM = dm/2.41e-10
+    #
+    # Because astronomers are a crazy bunch, the "standard" calculation
+    #   is in Mhz, rather than Hz
+    #
+    centerfreq = centerfreq / 1.0e6
+    bw = bw / 1.0e6
+    
+    isign = int(bw / abs (bw))
+    
+    # Center frequency may be doppler shifted
+    cfreq     = centerfreq / doppler
+
+    # As well as the bandwidth..
+    bandwidth = bw / doppler
+
+    # Bandwidth divided among bins
+    binwidth  = bandwidth / npts
+
+    # Delay is an "extra" parameter, in usecs, and largely
+    #  untested in the Swinburne code.
+    delay = 0.0
+    
+    # This determines the coefficient of the frequency response curve
+    # Linear in DM, but quadratic in center frequency
+    coeff = -isign * 2.0*M_PI * DM / (cfreq*cfreq)
+    
+    # DC to nyquist/2
+    n = 0
+    for i in range(int(npts/2),npts):
+        freq = (n + 0.5) * binwidth
+        phi = coeff*freq*freq/(cfreq+freq) + (2.0*M_PI*freq*delay)
+        tmp[i] = complex(math.cos(phi), math.sin(phi))
+        n += 1
+
+    # -nyquist/2 to DC
+    n = int(npts/2)
+    n *= -1
+    for i in range(0,int(npts/2)):
+        freq = (n + 0.5) * binwidth
+        phi = coeff*freq*freq/(cfreq+freq) + (2.0*M_PI*freq*delay)
+        tmp[i] = complex(math.cos(phi), math.sin(phi))
+        n += 1
+    
+    
+    return(numpy.fft.ifft(tmp))
+
+#
+# Compute minimum number of taps required in de-dispersion FFT filter
+#
+def compute_disp_ntaps(dm,bw,freq):
+    NTLIMIT=65536*2
+    #
+    # Dt calculations are in Mhz, rather than Hz
+    #    crazy astronomers....
+    mbw = bw/1.0e6
+    mfreq = freq/1.0e6
+
+    f_lower = mfreq-(mbw/2)
+    f_upper = mfreq+(mbw/2)
+
+    # Compute smear time
+    Dt = dm/2.41e-4 * (1.0/(f_lower*f_lower)-1.0/(f_upper*f_upper))
+
+    # ntaps is now bandwidth*smeartime
+    ntaps = bw*Dt
+    if (ntaps < 32):
+        ntaps = 32
+    # special "flag" from command-line invoker to get around a bug
+    #   in Gnu Radio involving the FFT filter implementation
+    #   we can *never* increase the size of an FFT filter at runtime
+    #   but can decrease it.  So there's a special "startup" flag (dm=1500.0)
+    #   that causes us to return the NTLIMIT number of taps
+    #
+    if (dm >= 1500.0):
+        ntaps = NTLIMIT
+    if (ntaps > NTLIMIT):
+        ntaps = NTLIMIT
+    ntaps = int(math.log(ntaps) / math.log(2))
+    ntaps = int(math.pow(2,ntaps+1))
+    return(int(ntaps))

@@ -4486,7 +4486,7 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
         en = time.time()
         
         self.tdiff = en-st
-        return 1
+        return self.inlen
 
 
     def get_ovect(self):

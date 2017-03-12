@@ -1102,11 +1102,11 @@
     </param>
     <param>
       <key>minoutbuf</key>
-      <value>120</value>
+      <value>80</value>
     </param>
     <param>
       <key>n</key>
-      <value>2</value>
+      <value>5</value>
     </param>
     <param>
       <key>type</key>
@@ -4430,7 +4430,7 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
     </param>
     <param>
       <key>srate</key>
-      <value>float(2500/2.0)</value>
+      <value>float(2500/5.0)</value>
     </param>
     <param>
       <key>vlen</key>

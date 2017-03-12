@@ -127,17 +127,6 @@ def log(vec,pref,longitude,which,freq,bw,decln,st,en,xport):
     bbst = logmid - (2.5 / 60.0)
     bben = logmid + (2.5 / 60.0)
     
-    #
-    # Deal with "audio" WAV file of de-dispersed, but not folded, data
-    #
-    if (sidh >= bbst and sidh <= bben and baseband_state == BASEBAND_OFF):
-        try:
-            s = xmlrpclib.Server('http://localhost:%d' % xport)
-            bbfn = pref+"-baseband-%04d%02d%02d.bin" % (ltp.tm_year, ltp.tm_mon, ltp.tm_mday)
-            s.set_baseband_file(bbfn)
-            baseband_state = BASEBAND_ON
-        except:
-            pass
         
     if (sidh >= st and sidh <= en and audio_state == AUDIO_OFF):
         try:
@@ -156,14 +145,6 @@ def log(vec,pref,longitude,which,freq,bw,decln,st,en,xport):
         except:
             pass
             
-    if (sidh > bben and baseband_state == BASEBAND_ON):
-        try:
-            s = xmlrpclib.Server('http://localhost:%d' % xport)
-            s.set_baseband_file("/dev/null")
-            baseband_state = BASEBAND_OFF
-        except:
-            pass
-
     if which == 0:
         if (sidh >= st and sidh <= en):
             f.write("%02d,%02d,%02d,%s," % (ltp.tm_hour, ltp.tm_min, ltp.tm_sec, curs))

@@ -992,7 +992,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1504, 240)</value>
+      <value>(1504, 256)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1142,7 +1142,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1608, 348)</value>
+      <value>(1608, 372)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1495,7 +1495,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1272, 240)</value>
+      <value>(1216, 264)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2107,7 +2107,7 @@ Calls some helper code to compute the coefficients</value>
     </param>
     <param>
       <key>window</key>
-      <value>window.blackmanharris(1024)</value>
+      <value>window.blackmanharris(64)</value>
     </param>
   </block>
   <block>
@@ -3911,7 +3911,7 @@ output and send to a WAV file.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1296, 344)</value>
+      <value>(1216, 384)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -5648,7 +5648,7 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1600, 412)</value>
+      <value>(1600, 444)</value>
     </param>
     <param>
       <key>_rotation</key>

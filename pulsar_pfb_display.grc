@@ -5342,7 +5342,7 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
     <key>single_pole_iir_filter_xx</key>
     <param>
       <key>alpha</key>
-      <value>2.2</value>
+      <value>1.0/2.2</value>
     </param>
     <param>
       <key>alias</key>

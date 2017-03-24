@@ -271,33 +271,6 @@
     </param>
   </block>
   <block>
-    <key>variable</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(1208, 476)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>nrfi</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>64</value>
-    </param>
-  </block>
-  <block>
     <key>variable_function_probe</key>
     <param>
       <key>block_id</key>
@@ -1146,6 +1119,57 @@
     </param>
   </block>
   <block>
+    <key>blocks_keep_one_in_n</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1312, 388)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_keep_one_in_n_1</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>n</key>
+      <value>int((samp_rate/nrfi)/if_rate)</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>float</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
     <key>blocks_multiply_const_vxx</key>
     <param>
       <key>alias</key>
@@ -1310,7 +1334,7 @@
     </param>
     <param>
       <key>const</key>
-      <value>pulsar_pfb_helper.compute_rfi_map(rfilist, freq, samp_rate, 64)</value>
+      <value>pulsar_pfb_helper.compute_rfi_map(rfilist, freq, samp_rate, nrfi)</value>
     </param>
     <param>
       <key>affinity</key>
@@ -2544,6 +2568,49 @@ and large-transient detector algorithm</value>
     <param>
       <key>note</key>
       <value></value>
+    </param>
+  </block>
+  <block>
+    <key>parameter</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(384, 760)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>nrfi</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value>Number of RFI excision bins</value>
+    </param>
+    <param>
+      <key>short_id</key>
+      <value></value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>intx</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>50</value>
     </param>
   </block>
   <block>
@@ -3951,69 +4018,6 @@ and large-transient detector algorithm</value>
     <param>
       <key>sync</key>
       <value></value>
-    </param>
-  </block>
-  <block>
-    <key>pfb_arb_resampler_xxx</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(1216, 384)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>pfb_arb_resampler_xxx_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>nfilts</key>
-      <value>32</value>
-    </param>
-    <param>
-      <key>rrate</key>
-      <value>if_rate/(samp_rate/nrfi)</value>
-    </param>
-    <param>
-      <key>samp_delay</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>atten</key>
-      <value>40</value>
-    </param>
-    <param>
-      <key>taps</key>
-      <value></value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>fff</value>
     </param>
   </block>
   <block>
@@ -5444,7 +5448,7 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
     <key>single_pole_iir_filter_xx</key>
     <param>
       <key>alpha</key>
-      <value>1.0/((samp_rate/64)/(if_rate/4))</value>
+      <value>1.0/((samp_rate/nrfi)/(if_rate/4))</value>
     </param>
     <param>
       <key>alias</key>
@@ -6034,7 +6038,7 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
   </connection>
   <connection>
     <source_block_id>blocks_add_xx_0</source_block_id>
-    <sink_block_id>pfb_arb_resampler_xxx_0</sink_block_id>
+    <sink_block_id>blocks_keep_one_in_n_1</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -6047,6 +6051,12 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
   <connection>
     <source_block_id>blocks_keep_one_in_n_0</source_block_id>
     <sink_block_id>blocks_multiply_const_vxx_2</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_keep_one_in_n_1</source_block_id>
+    <sink_block_id>blocks_multiply_const_vxx_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -6101,8 +6111,8 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
   <connection>
     <source_block_id>blocks_vector_to_streams_0</source_block_id>
     <sink_block_id>blocks_add_xx_0</sink_block_id>
-    <source_key>64</source_key>
-    <sink_key>64</sink_key>
+    <source_key>50</source_key>
+    <sink_key>50</sink_key>
   </connection>
   <connection>
     <source_block_id>blocks_vector_to_streams_0</source_block_id>
@@ -6383,92 +6393,8 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
   <connection>
     <source_block_id>blocks_vector_to_streams_0</source_block_id>
     <sink_block_id>blocks_add_xx_0</sink_block_id>
-    <source_key>50</source_key>
-    <sink_key>50</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_vector_to_streams_0</source_block_id>
-    <sink_block_id>blocks_add_xx_0</sink_block_id>
-    <source_key>51</source_key>
-    <sink_key>51</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_vector_to_streams_0</source_block_id>
-    <sink_block_id>blocks_add_xx_0</sink_block_id>
-    <source_key>52</source_key>
-    <sink_key>52</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_vector_to_streams_0</source_block_id>
-    <sink_block_id>blocks_add_xx_0</sink_block_id>
-    <source_key>53</source_key>
-    <sink_key>53</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_vector_to_streams_0</source_block_id>
-    <sink_block_id>blocks_add_xx_0</sink_block_id>
-    <source_key>54</source_key>
-    <sink_key>54</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_vector_to_streams_0</source_block_id>
-    <sink_block_id>blocks_add_xx_0</sink_block_id>
-    <source_key>55</source_key>
-    <sink_key>55</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_vector_to_streams_0</source_block_id>
-    <sink_block_id>blocks_add_xx_0</sink_block_id>
-    <source_key>56</source_key>
-    <sink_key>56</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_vector_to_streams_0</source_block_id>
-    <sink_block_id>blocks_add_xx_0</sink_block_id>
-    <source_key>57</source_key>
-    <sink_key>57</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_vector_to_streams_0</source_block_id>
-    <sink_block_id>blocks_add_xx_0</sink_block_id>
-    <source_key>58</source_key>
-    <sink_key>58</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_vector_to_streams_0</source_block_id>
-    <sink_block_id>blocks_add_xx_0</sink_block_id>
-    <source_key>59</source_key>
-    <sink_key>59</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_vector_to_streams_0</source_block_id>
-    <sink_block_id>blocks_add_xx_0</sink_block_id>
     <source_key>6</source_key>
     <sink_key>6</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_vector_to_streams_0</source_block_id>
-    <sink_block_id>blocks_add_xx_0</sink_block_id>
-    <source_key>60</source_key>
-    <sink_key>60</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_vector_to_streams_0</source_block_id>
-    <sink_block_id>blocks_add_xx_0</sink_block_id>
-    <source_key>61</source_key>
-    <sink_key>61</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_vector_to_streams_0</source_block_id>
-    <sink_block_id>blocks_add_xx_0</sink_block_id>
-    <source_key>62</source_key>
-    <sink_key>62</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_vector_to_streams_0</source_block_id>
-    <sink_block_id>blocks_add_xx_0</sink_block_id>
-    <source_key>63</source_key>
-    <sink_key>63</sink_key>
   </connection>
   <connection>
     <source_block_id>blocks_vector_to_streams_0</source_block_id>
@@ -6521,12 +6447,6 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
   <connection>
     <source_block_id>osmosdr_source_0</source_block_id>
     <sink_block_id>fft_filter_xxx_1</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>pfb_arb_resampler_xxx_0</source_block_id>
-    <sink_block_id>blocks_multiply_const_vxx_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
